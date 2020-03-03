@@ -13,7 +13,6 @@ public class FarmHouseTest {
 
     private static final Logger LOGGER = Logger.getLogger(FarmHouseTest.class.getName());
     FarmHouse currentFarmHouse = new FarmHouse();
-    //ArrayList<Person> listOfPeople = new ArrayList<>();
     Farmer cfarmer = new Farmer("Chris Farmer", 28, "Male");
     Farmer gbradford = new Farmer("Giles Bradford", 24, "Male");
 
@@ -33,5 +32,23 @@ public class FarmHouseTest {
         Integer actualLength = currentFarmHouse.getListOfPeople().size();
 
         Assert.assertEquals(expectedLength, actualLength);
+    }
+
+    @Test
+    public void getPersonTest() {
+        currentFarmHouse.addPerson(cfarmer);
+        String actualName = currentFarmHouse.getPerson("Chris Farmer").getName();
+        String expectedName = "Chris Farmer";
+        Assert.assertEquals(expectedName, actualName);
+    }
+
+    @Test
+    public void removePersonTest() {
+        currentFarmHouse.addPerson(cfarmer);
+        currentFarmHouse.removePerson("Chris Farmer");
+        Integer actualSize = currentFarmHouse.listOfPeople.size();
+        Integer expectedSize = 0;
+
+        Assert.assertEquals(expectedSize, actualSize);
     }
 }

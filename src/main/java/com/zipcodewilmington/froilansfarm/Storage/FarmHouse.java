@@ -20,4 +20,17 @@ public class FarmHouse {
         return listOfPeople;
     }
 
+    public Person getPerson(String name) {
+        for (Person element : listOfPeople) {
+            if (element.getName().equals(name)) {
+                return element;
+            }
+        }
+        return null;
+    }
+
+    public void removePerson(String name) {
+        listOfPeople.removeIf(element -> element.getName().equals(name));
+    }
+
 }
