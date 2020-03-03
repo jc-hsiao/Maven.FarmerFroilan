@@ -10,6 +10,7 @@ public class FarmVehicleTest {
 
     @Test
     public void isEmptyTest(){
+
         FarmVehicle newFarmVehicle = new CropDuster();
         newFarmVehicle.setGasLevel(5);
         Integer gasLevel = newFarmVehicle.getGasLevel();
@@ -27,26 +28,31 @@ public class FarmVehicleTest {
         String expected = "Red";
 
         Assert.assertEquals(expected,actual);
+
         LOGGER.info(actual);
 
     }
     @Test
     public void checkGasFieldTest(){
+
         FarmVehicle newVehicle = new Tractor();
         Integer actual = newVehicle.getGasLevel();
         Integer expected = 10;
         Assert.assertEquals(expected, actual);
+
         LOGGER.info("" + actual);
     }
 
     @Test
     public void refillTest(){
+
         FarmVehicle newVehicle = new Tractor();
         newVehicle.setGasLevel(3);
         newVehicle.refill();
         Integer expected = 10;
         Integer actual =  newVehicle.getGasLevel();
         Assert.assertEquals(expected,actual);
+
         LOGGER.info("" + actual);
 
     }

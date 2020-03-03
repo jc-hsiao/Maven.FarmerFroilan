@@ -10,9 +10,12 @@ public class VehicleTest {
 
     @Test
     public void idTest(){
+
         Tractor tractor = new Tractor();
         tractor.setId(10);
+
         LOGGER.info(""+ tractor.getId());
+
         Integer expected = tractor.getId();
         Integer actual = 10;
         Assert.assertEquals(expected,actual);

@@ -1,4 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Person;
+import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 
@@ -12,4 +13,8 @@ public class Botanist extends Person {
         //cropRow.addCrop(crop);
     }
 
+    @Override
+    public void eat(Edible object) {
+
+    }
 }

@@ -2,7 +2,11 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Flyable;
 
+import java.util.logging.Logger;
+
+
 public class CropDuster extends FarmVehicle implements Flyable {
+    private static final Logger LOGGER = Logger.getLogger(CropDuster.class.getName());
 
     Integer fertilizerAmount = 8;
 
@@ -44,7 +48,10 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
 
     @Override
-    public void fly() {}
+    public void fly() {
+
+        setGasLevel(getGasLevel()-1);
+    }
 
     @Override
     public String makeNoise() {
