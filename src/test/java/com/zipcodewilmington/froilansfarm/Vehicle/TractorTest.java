@@ -1,11 +1,13 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import org.junit.Assert;
 import org.junit.Test;
+import org.junit.runner.notification.RunListener;
 
 import java.util.logging.Logger;
 
 public class TractorTest {
-    private static final Logger LOGGER = Logger.getLogger(FarmVehicleTest.class.getName());
+    private static final Logger LOGGER = Logger.getLogger(TractorTest.class.getName());
 
 
     @Test
@@ -13,9 +15,9 @@ public class TractorTest {
 
     }
 
+
+
     @Test
-    public void makeNoiseTest(){
-
-
+    public void makeNoiseTest() {
     }
 }

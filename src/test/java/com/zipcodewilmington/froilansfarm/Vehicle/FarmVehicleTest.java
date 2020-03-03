@@ -30,4 +30,24 @@ public class FarmVehicleTest {
         LOGGER.info(actual);
 
     }
+    @Test
+    public void checkGasFieldTest(){
+        FarmVehicle newVehicle = new Tractor();
+        Integer actual = newVehicle.getGasLevel();
+        Integer expected = 10;
+        Assert.assertEquals(expected, actual);
+        LOGGER.info("" + actual);
+    }
+
+    @Test
+    public void refillTest(){
+        FarmVehicle newVehicle = new Tractor();
+        newVehicle.setGasLevel(3);
+        newVehicle.refill();
+        Integer expected = 10;
+        Integer actual =  newVehicle.getGasLevel();
+        Assert.assertEquals(expected,actual);
+        LOGGER.info("" + actual);
+
+    }
 }

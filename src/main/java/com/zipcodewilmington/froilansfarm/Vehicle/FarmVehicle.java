@@ -3,7 +3,7 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 public abstract class FarmVehicle extends Vehicle{
 
     private String color;
-    private Integer gasLevel;
+    private Integer gasLevel = 10;
 
 
     public FarmVehicle() {
@@ -36,6 +36,10 @@ public abstract class FarmVehicle extends Vehicle{
             return true;
         }
         return false;
+    }
+
+    public void refill(){
+        setGasLevel(10);
     }
 
 }
