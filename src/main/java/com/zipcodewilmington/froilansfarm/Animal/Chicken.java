@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 
 public class Chicken extends Animal implements Produce {
 
-    public Egg layEgg(){
+  //  public Egg layEgg(){
         //return egg object
-    }
+    //}
 }
