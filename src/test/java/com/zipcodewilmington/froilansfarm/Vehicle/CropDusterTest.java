@@ -46,7 +46,11 @@ public class CropDusterTest {
 
     @Test
     public void makeNoiseTest(){
-
+        CropDuster cd = new CropDuster();
+        String expected = cd.makeNoise();
+        String actual = "puh puh puh";
+        LOGGER.info(cd.makeNoise());
+        Assert.assertEquals(expected,actual);
 
     }
 }

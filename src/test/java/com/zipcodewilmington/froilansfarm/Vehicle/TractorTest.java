@@ -19,5 +19,10 @@ public class TractorTest {
 
     @Test
     public void makeNoiseTest() {
+        Tractor tractor = new Tractor();
+        String expected = tractor.makeNoise();
+        String actual = "Vroom Vroom";
+        Assert.assertEquals(expected,actual);
+        LOGGER.info(tractor.makeNoise());
     }
 }

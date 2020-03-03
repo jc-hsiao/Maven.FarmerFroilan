@@ -1,7 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Flyable;
-import com.zipcodewilmington.froilansfarm.Produce.Crop;
 
 public class CropDuster extends FarmVehicle implements Flyable {
 
@@ -26,6 +25,7 @@ public class CropDuster extends FarmVehicle implements Flyable {
     public void fertilizeCrops(){
 
 
+
     }
 
     public Integer getFertilizerAmount() {
@@ -47,7 +47,8 @@ public class CropDuster extends FarmVehicle implements Flyable {
     public void fly() {}
 
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
 
+        return "puh puh puh";
     }
 }

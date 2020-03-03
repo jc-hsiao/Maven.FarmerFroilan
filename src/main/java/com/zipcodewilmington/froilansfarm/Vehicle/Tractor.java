@@ -18,7 +18,8 @@ public class Tractor extends FarmVehicle {
     }
 
     @Override
-    public void makeNoise() {
+    public String makeNoise() {
+        return "Vroom Vroom";
 
     }
 }
