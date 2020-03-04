@@ -7,8 +7,6 @@
     <groupId>com.zipcodewilmington</groupId>
     <artifactId>froilans-farm</artifactId>
     <version>1.0-SNAPSHOT</version>
-<<<<<<< HEAD
-=======
     <build>
         <plugins>
             <plugin>
@@ -21,7 +19,6 @@
             </plugin>
         </plugins>
     </build>
->>>>>>> fd297cd7c8a3eb068e955b1b4010f8987e682c05
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -30,9 +27,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-<<<<<<< HEAD
-
-
-=======
->>>>>>> fd297cd7c8a3eb068e955b1b4010f8987e682c05
 </project>
