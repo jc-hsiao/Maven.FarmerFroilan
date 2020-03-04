@@ -5,7 +5,8 @@ public class Egg extends Edible {
     private boolean isFertile;
 
     public Egg() {
-        this(0.3);
+        super("eggy");
+        isFertile = false;
     }
 
     public Egg(double quality){
@@ -13,6 +14,7 @@ public class Egg extends Edible {
         isFertile = false;
     }
 
+    //no method to set fertile yet because it will make the plot too complicated
     public boolean isFertile() {
         return isFertile;
     }
