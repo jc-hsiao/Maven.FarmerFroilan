@@ -1,10 +1,21 @@
 package com.zipcodewilmington.froilansfarm.Simulation;
+import com.zipcodewilmington.froilansfarm.Animal.Chicken;
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Console;
+import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
 import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
+import com.zipcodewilmington.froilansfarm.Storage.ChickenCoop;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
 import com.zipcodewilmington.froilansfarm.Storage.FarmHouse;
+import com.zipcodewilmington.froilansfarm.Storage.Stable;
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
+import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
+import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
+
+import java.util.ArrayList;
 
 public class Simulation {
 
@@ -17,8 +28,34 @@ public class Simulation {
         Farm mainFarm = new Farm("Froilan's Farm");
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
+        Person froilanda = new Botanist("Foilanda", 22, "Female");
         froilansHouse.addPerson(froilan);
+        froilansHouse.addPerson(froilanda);
         mainFarm.setFarmHouse(froilansHouse);
+        Tractor Tractor = new Tractor();
+        CropDuster cropDuster = new CropDuster();
+        ArrayList<ChickenCoop> chickenCoopList = new ArrayList<>();
+        ArrayList<Stable> stableList = new ArrayList<>();
+
+        for (int i = 0; i < 4; i++) {
+            ChickenCoop chickenCoop = new ChickenCoop();
+            for (int j = 0; j < 4; j++) {
+                chickenCoop.addChicken(new Chicken());
+            }
+            chickenCoopList.add(chickenCoop);
+        }
+        chickenCoopList.get(3).removeChicken(new Chicken());
+        mainFarm.setChickenCoops(chickenCoopList);
+
+        for (int i = 0; i < 3; i++) {
+            Stable stable = new Stable();
+            for (int j = 0; j < 10; j++) {
+                stable.addHorse(new Horse());
+            }
+            stableList.add(stable);
+        }
+        mainFarm.setStables(stableList);
+
 
         return mainFarm;
     }

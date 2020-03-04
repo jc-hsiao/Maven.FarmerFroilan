@@ -9,6 +9,7 @@ public class Farm {
     ArrayList<Field> fields;
     FarmHouse farmHouse;
     FoodStorage foodStorage;
+    FoodStorage animalFoodStorage;
 
     public Farm() {
         this("");
@@ -20,14 +21,16 @@ public class Farm {
         fields = new ArrayList<Field>();
         farmHouse = null;
         foodStorage = null;
+        animalFoodStorage = null;
     }
-    public Farm(String farmName, ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, ArrayList<Field> fields, FarmHouse farmHouse, FoodStorage foodStorage) {
+    public Farm(String farmName, ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, ArrayList<Field> fields, FarmHouse farmHouse, FoodStorage foodStorage, FoodStorage animalFoodStorage) {
         this.farmName = farmName;
         this.stables = stables;
         this.chickenCoops = chickenCoops;
         this.fields = fields;
         this.farmHouse = farmHouse;
         this.foodStorage = foodStorage;
+        this.animalFoodStorage = animalFoodStorage;
     }
 
     public String getFarmName() {
