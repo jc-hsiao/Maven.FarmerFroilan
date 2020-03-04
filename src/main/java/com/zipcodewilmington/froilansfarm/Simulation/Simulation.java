@@ -6,9 +6,6 @@ import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
 import com.zipcodewilmington.froilansfarm.Storage.FarmHouse;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class Simulation {
 
     public static Console c = new Console(System.out);
@@ -27,7 +24,7 @@ public class Simulation {
     }
 
     public static void simulate(Farm someFarm){
-        c.printlnWaitWithTime(2000L, "The simulation for the week is starting.");
+        c.printlnWaitWithTime(2500L, "The simulation for the week will be starting soon...");
 
         for (WeekDay d :WeekDay.values()) {
             c.printlnWait(" [ It's "+d.getWeekDayName()+"! ] ");
@@ -36,7 +33,7 @@ public class Simulation {
             Events.everyNight(someFarm);
         }
 
-        c.printlnWaitWithTime(2000L, "The simulation for the week has ended.");
+        c.printlnWaitWithTime(2500L, "The simulation for the week has ended.");
     }
 
 
