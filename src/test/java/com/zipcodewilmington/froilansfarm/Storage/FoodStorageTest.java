@@ -43,16 +43,31 @@ public class FoodStorageTest {
     }
 
     @Test
-    public void updateFoodCount() {
+    public void updateFoodCountTest() {
         listOfFood.add(currentStrangeFruit);
         currentFoodStorage.addFoodSet(foodName, listOfFood);
         currentFoodStorage.updateFoodCount(foodName, anotherStrangePlant, 10);
-        /*Integer a = currentFoodStorage.getFoodStorage().containsKey(foodName);
-        Integer g = 1;*/
+
         Integer a = currentFoodStorage.getFoodStorage().get(foodName).size();
         System.out.println(a);
         Assert.assertTrue(currentFoodStorage.getFoodStorage().containsKey(foodName));
-        //Assert.assertEquals(a, g);
+    }
+
+    @Test
+    public void removeFoodTest() {
+        listOfFood.add(currentStrangeFruit);
+        listOfFood.add(anotherStrangeFruit);
+        currentFoodStorage.addFoodSet(foodName, listOfFood);
+
+        Integer actualSize = currentFoodStorage.foodStorage.size();
+        Integer expectedSize = 1;
+
+        Integer foodAmount = listOfFood.size();
+        currentFoodStorage.takeFood("StrangeFruit", currentStrangeFruit);
+        Integer expectedAmount = 1;
+
+        Assert.assertFalse(currentFoodStorage.foodStorage.isEmpty());
+        Assert.assertEquals(expectedSize, actualSize);
     }
 
 }

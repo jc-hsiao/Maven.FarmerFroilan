@@ -1,11 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-public abstract class FarmVehicle extends Vehicle{
+public abstract class FarmVehicle extends Vehicle {
 
     private String color;
     private Integer gasLevel = 10;
-
-
 
 
     public FarmVehicle() {
@@ -26,6 +24,11 @@ public abstract class FarmVehicle extends Vehicle{
     }
 
     public Integer getGasLevel() {
+        if (gasLevel < 0)
+            System.out.println("Yikes, you are crashing!!");
+        else {
+            return gasLevel;
+        }
         return gasLevel;
     }
 
@@ -33,14 +36,14 @@ public abstract class FarmVehicle extends Vehicle{
         this.gasLevel = gasLevel;
     }
 
-    public Boolean isEmpty (Integer gasLevel){
-        if(gasLevel == 0){
+    public Boolean isEmpty(Integer gasLevel) {
+        if (gasLevel == 0) {
             return true;
         }
         return false;
     }
 
-    public void refill(){
+    public void refill() {
         setGasLevel(10);
     }
 

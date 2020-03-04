@@ -18,6 +18,7 @@ public class CornStalk extends Crop {
         cornStalkWithCorn.add(corn);
     }
 
+
     @Override
     public Edible yield() {
         return new EarOfCorn();
