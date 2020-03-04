@@ -56,7 +56,6 @@ public class Simulation {
         }
         mainFarm.setStables(stableList);
 
-
         return mainFarm;
     }
 
