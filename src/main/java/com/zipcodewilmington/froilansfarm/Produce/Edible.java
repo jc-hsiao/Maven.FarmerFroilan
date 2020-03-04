@@ -1,8 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Produce;
 
 public abstract class Edible {
-    String flavor;
-    double quality;
+    private String flavor;
+    private double quality;
 
     public Edible(){
         this(0.3,"");
