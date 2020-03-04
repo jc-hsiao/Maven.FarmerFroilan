@@ -21,7 +21,7 @@ public class StrangePlant extends Crop  {
     }
 
     @Override
-    public void yield(Produce crop) {
-
+    public Edible yield() {
+        return new StrangeFruit();
     }
 }

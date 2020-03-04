@@ -7,12 +7,13 @@ public abstract class Person extends Rider implements Eater {
     private int age;
     private String gender;
 
+
     public Person(String name, int age, String gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
-
     }
+
     public String getName() {
         return name;
     }

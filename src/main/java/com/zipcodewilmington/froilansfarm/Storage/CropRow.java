@@ -18,4 +18,8 @@ public class CropRow {
     public void removeCrops() {
         crops.clear();
     }
+
+    public Integer getCropRowSize() {
+        return crops.size();
+    }
 }
