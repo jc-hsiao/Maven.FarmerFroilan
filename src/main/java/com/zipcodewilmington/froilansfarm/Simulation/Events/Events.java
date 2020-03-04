@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Simulation.Events;
 import com.zipcodewilmington.froilansfarm.Console;
+import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
 
@@ -8,8 +9,8 @@ public interface Events {
     Console c = new Console(System.out);
     void run(Farm farm);
 
-    static Person getMC(Farm farm){
-        return farm.getFarmHouse().getPerson("Froilan");
+    static Farmer getMC(Farm farm){
+        return (Farmer)farm.getFarmHouse().getPerson("Froilan");
     }
 
     static void everyMorning( Farm farm ){
