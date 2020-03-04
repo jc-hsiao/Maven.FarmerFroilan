@@ -6,6 +6,8 @@ public abstract class FarmVehicle extends Vehicle{
     private Integer gasLevel = 10;
 
 
+
+
     public FarmVehicle() {
     }
 
