@@ -1,4 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Storage;
+import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
+import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
+
 import java.util.ArrayList;
 
 public class Farm {
@@ -10,6 +13,7 @@ public class Farm {
     FarmHouse farmHouse;
     FoodStorage foodStorage;
     FoodStorage animalFoodStorage;
+    ArrayList<FarmVehicle> vehicles;
 
     public Farm() {
         this("");
@@ -22,8 +26,9 @@ public class Farm {
         farmHouse = null;
         foodStorage = null;
         animalFoodStorage = null;
+        vehicles = new ArrayList<FarmVehicle>();
     }
-    public Farm(String farmName, ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, ArrayList<Field> fields, FarmHouse farmHouse, FoodStorage foodStorage, FoodStorage animalFoodStorage) {
+    public Farm(String farmName, ArrayList<Stable> stables, ArrayList<ChickenCoop> chickenCoops, ArrayList<Field> fields, FarmHouse farmHouse, FoodStorage foodStorage, FoodStorage animalFoodStorage, ArrayList<FarmVehicle> vehicles) {
         this.farmName = farmName;
         this.stables = stables;
         this.chickenCoops = chickenCoops;
@@ -31,6 +36,7 @@ public class Farm {
         this.farmHouse = farmHouse;
         this.foodStorage = foodStorage;
         this.animalFoodStorage = animalFoodStorage;
+        this.vehicles = vehicles;
     }
 
     public String getFarmName() {
@@ -93,4 +99,19 @@ public class Farm {
         fields.add(someField);
     }
 
+    public FoodStorage getAnimalFoodStorage() {
+        return animalFoodStorage;
+    }
+
+    public void setAnimalFoodStorage(FoodStorage animalFoodStorage) {
+        this.animalFoodStorage = animalFoodStorage;
+    }
+
+    public ArrayList<FarmVehicle> getVehicles() {
+        return vehicles;
+    }
+
+    public void setVehicles(ArrayList<FarmVehicle> vehicles) {
+        this.vehicles = vehicles;
+    }
 }

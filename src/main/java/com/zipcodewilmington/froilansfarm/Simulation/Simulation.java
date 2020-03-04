@@ -32,7 +32,7 @@ public class Simulation {
         froilansHouse.addPerson(froilan);
         froilansHouse.addPerson(froilanda);
         mainFarm.setFarmHouse(froilansHouse);
-        Tractor Tractor = new Tractor();
+        Tractor tractor = new Tractor();
         CropDuster cropDuster = new CropDuster();
         ArrayList<ChickenCoop> chickenCoopList = new ArrayList<>();
         ArrayList<Stable> stableList = new ArrayList<>();
@@ -44,7 +44,7 @@ public class Simulation {
             }
             chickenCoopList.add(chickenCoop);
         }
-        chickenCoopList.get(3).removeChicken(new Chicken());
+        chickenCoopList.get(3).removeLastChicken();
         mainFarm.setChickenCoops(chickenCoopList);
 
         for (int i = 0; i < 3; i++) {
@@ -55,8 +55,10 @@ public class Simulation {
             stableList.add(stable);
         }
         mainFarm.setStables(stableList);
-
-
+        ArrayList<FarmVehicle> vehicles = new ArrayList<>();
+        vehicles.add(tractor);
+        vehicles.add(cropDuster);
+        mainFarm.setVehicles(vehicles);
         return mainFarm;
     }
 
