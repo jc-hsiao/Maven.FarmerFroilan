@@ -18,7 +18,7 @@ public class TractorTest {
 
         Tractor newTractor = new Tractor();
         CropRow newRow = new CropRow();
-        newTractor.harvestCrops(newRow,20);
+        newTractor.harvestCrops(newRow);
 
 
     }
