@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
-import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
-import org.junit.Assert;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import org.junit.Test;
 
 import java.util.ArrayList;
