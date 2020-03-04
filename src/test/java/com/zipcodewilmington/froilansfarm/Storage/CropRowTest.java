@@ -36,4 +36,11 @@ public class CropRowTest {
 
         Assert.assertTrue(currentCropRow.crops.isEmpty());
     }
+
+    @Test
+    public void getCropRowSizeTest() {
+        Integer actualSize = currentCropRow.getCropRowSize();
+        Integer expectedSize = 0;
+        Assert.assertEquals(expectedSize, actualSize);
+    }
 }
