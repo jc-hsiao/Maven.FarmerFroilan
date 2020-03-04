@@ -2,6 +2,7 @@ package com.zipcodewilmington.froilansfarm.Animal;
 
 import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
+import com.zipcodewilmington.froilansfarm.Storage.FoodStorage;
 
 public class Horse extends Animal implements Rideable {
 
@@ -53,9 +54,6 @@ public class Horse extends Animal implements Rideable {
 
     public void gallop(){ setHappy(true);; }
 
-    public void eat(Edible object) {
-        
-    }
 
     @Override
     public void setMounted(boolean mounted) {
@@ -71,5 +69,10 @@ public class Horse extends Animal implements Rideable {
             isMounted = true;
             return true;
         }
+    }
+
+    @Override
+    public void eat(Edible food, FoodStorage storage) {
+        storage.takeFood(food.getClass().getSimpleName(),food);
     }
 }
