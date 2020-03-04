@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-public abstract class FarmVehicle extends Vehicle{
+public abstract class FarmVehicle extends Vehicle {
 
     private String color;
     private Integer gasLevel = 10;
@@ -23,22 +23,26 @@ public abstract class FarmVehicle extends Vehicle{
         this.color = color;
     }
 
-    public Integer getGasLevel() {
-        return gasLevel;
+    public Integer getGasLevel() throws Exception {
+        if (gasLevel < 0)
+            throw new Exception("Not enough fuel");
+        else {
+            return gasLevel;
+        }
     }
 
     public void setGasLevel(Integer gasLevel) {
         this.gasLevel = gasLevel;
     }
 
-    public Boolean isEmpty (Integer gasLevel){
-        if(gasLevel == 0){
+    public Boolean isEmpty(Integer gasLevel) {
+        if (gasLevel == 0) {
             return true;
         }
         return false;
     }
 
-    public void refill(){
+    public void refill() {
         setGasLevel(10);
     }
 

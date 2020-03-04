@@ -1,6 +1,9 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Produce.Crop;
+import com.zipcodewilmington.froilansfarm.Storage.CropRow;
+
+import java.util.ArrayList;
 
 public class Tractor extends FarmVehicle {
 
@@ -11,10 +14,15 @@ public class Tractor extends FarmVehicle {
     public Tractor() {
     }
 
-    public Crop harvestCrops(){
+    public ArrayList<Crop> harvestCrops(CropRow newRow) throws Exception {
+        ArrayList<Crop> harvestedCrops = new ArrayList<>();
 
-        return null;
+        for (Crop c : newRow.getCrops()) {
+            harvestedCrops.add(c);
+            setGasLevel(getGasLevel() - 1);
+        }
 
+        return harvestedCrops;
     }
 
     @Override

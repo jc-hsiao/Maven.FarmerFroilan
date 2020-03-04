@@ -1,8 +1,13 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Flyable;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
+
+import java.util.logging.Logger;
+
 
 public class CropDuster extends FarmVehicle implements Flyable {
+    private static final Logger LOGGER = Logger.getLogger(CropDuster.class.getName());
 
     Integer fertilizerAmount = 8;
 
@@ -10,41 +15,52 @@ public class CropDuster extends FarmVehicle implements Flyable {
         super(id, color);
     }
 
-    public CropDuster() {
+    public CropDuster() {super();}
 
-    }
 
-    public Boolean hasFertilizer(){
+    public Boolean hasFertilizer() {
 
-        if(fertilizerAmount == 0){
+        if (fertilizerAmount == 0) {
             return false;
         }
         return true;
     }
 
-    public void fertilizeCrops(){
+    public void fertilizeCrops(Field newField, Integer amtOfRows) throws Exception {
 
+        fly();
+        newField.getCropRow(amtOfRows);
 
+        for (int i = 0; i < amtOfRows; i++) {
+            setGasLevel(getGasLevel() - 1);
+            setFertilizerAmount(getFertilizerAmount() - 1);
 
+        }
     }
 
-    public Integer getFertilizerAmount() {
-        return fertilizerAmount;
+    public Integer getFertilizerAmount() throws Exception {
+
+        if (fertilizerAmount < 0) {
+            throw new Exception("Out of fertilizer");
+        } else {
+            return fertilizerAmount;
+        }
     }
 
     public void setFertilizerAmount(Integer fertilizer) {
         this.fertilizerAmount = fertilizer;
     }
 
-    public void refillFertilizer(){
-    setFertilizerAmount(8);
+    public void refillFertilizer() {
+        setFertilizerAmount(8);
 
     }
 
-
-
     @Override
-    public void fly() {}
+    public void fly() throws Exception {
+
+        setGasLevel(getGasLevel() - 1);
+    }
 
     @Override
     public String makeNoise() {

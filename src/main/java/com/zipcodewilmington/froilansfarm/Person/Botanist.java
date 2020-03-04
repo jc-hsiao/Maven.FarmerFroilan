@@ -1,8 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Person;
+
 import com.zipcodewilmington.froilansfarm.Interfaces.Eater;
 import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import com.zipcodewilmington.froilansfarm.Produce.Crop;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
+import com.zipcodewilmington.froilansfarm.Storage.FoodStorage;
 
 public class Botanist extends Person implements Eater {
 
@@ -11,11 +13,11 @@ public class Botanist extends Person implements Eater {
     }
 
     public void plant(Crop crop, CropRow cropRow) {
-        //cropRow.addCrop(crop);
+        cropRow.addSeeds(crop);
     }
 
     @Override
-    public void eat(Edible object) {
-
+    public void eat(Edible food, FoodStorage storage) {
+        storage.takeFood(food.getClass().getSimpleName(),food);
     }
 }
