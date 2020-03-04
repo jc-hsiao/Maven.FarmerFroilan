@@ -6,10 +6,7 @@ import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
 import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
-import com.zipcodewilmington.froilansfarm.Storage.ChickenCoop;
-import com.zipcodewilmington.froilansfarm.Storage.Farm;
-import com.zipcodewilmington.froilansfarm.Storage.FarmHouse;
-import com.zipcodewilmington.froilansfarm.Storage.Stable;
+import com.zipcodewilmington.froilansfarm.Storage.*;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
@@ -28,12 +25,17 @@ public class Simulation {
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
         Person froilanda = new Botanist("Foilanda", 22, "Female");
+        ArrayList<Field> listOfFields = new ArrayList<>();
+        Field currentField = new Field();
+        listOfFields.add(currentField);
         froilansHouse.addPerson(froilan);
         froilansHouse.addPerson(froilanda);
+
         mainFarm.setFarmHouse(froilansHouse);
         mainFarm.setChickenCoops(setUpChickenCoops());
         mainFarm.setStables(setUpStables());
         mainFarm.setVehicles(setUpVehicle());
+        mainFarm.setFields(listOfFields);
         return mainFarm;
     }
 
