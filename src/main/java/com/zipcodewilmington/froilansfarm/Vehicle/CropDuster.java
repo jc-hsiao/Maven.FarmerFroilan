@@ -1,8 +1,13 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Flyable;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
+
+import java.util.logging.Logger;
+
 
 public class CropDuster extends FarmVehicle implements Flyable {
+    private static final Logger LOGGER = Logger.getLogger(CropDuster.class.getName());
 
     Integer fertilizerAmount = 8;
 
@@ -10,22 +15,22 @@ public class CropDuster extends FarmVehicle implements Flyable {
         super(id, color);
     }
 
-    public CropDuster() {
-
-    }
+    public CropDuster() {super();}
 
     public Boolean hasFertilizer(){
-
-        if(fertilizerAmount == 0){
-            return false;
-        }
-        return true;
+        return fertilizerAmount != 0;
     }
 
-    public void fertilizeCrops(){
+    public void fertilizeCrops(Field newField, Integer amtOfRows){
 
+        fly();
+        newField.getCropRow(amtOfRows);
 
+        for (int i = 0; i <amtOfRows  ; i++) {
+            setGasLevel(getGasLevel() - 1);
+            setFertilizerAmount(getFertilizerAmount() - 1);
 
+        }
     }
 
     public Integer getFertilizerAmount() {
@@ -41,10 +46,11 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     }
 
-
-
     @Override
-    public void fly() {}
+    public void fly() {
+
+        setGasLevel(getGasLevel()-1);
+    }
 
     @Override
     public String makeNoise() {
