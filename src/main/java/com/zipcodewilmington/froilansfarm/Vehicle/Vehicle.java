@@ -5,6 +5,7 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public abstract class Vehicle implements NoiseMaker, Rideable {
 
+
     private Integer id;
     private boolean isMounted;
 
