@@ -15,10 +15,10 @@ public class Tractor extends FarmVehicle {
     public Tractor() {
     }
 
-    public ArrayList<Crop> harvestCrops(CropRow newRow, Integer amtOfRows){
+    public ArrayList<Crop> harvestCrops(CropRow newRow, Integer amtOfCrops){
         ArrayList<Crop> harvestedCrops = new ArrayList<>();
 
-        for(int i = 0; i < amtOfRows; i++){
+        for(int i = 0; i < amtOfCrops; i++){
 
         }
         return harvestedCrops;
