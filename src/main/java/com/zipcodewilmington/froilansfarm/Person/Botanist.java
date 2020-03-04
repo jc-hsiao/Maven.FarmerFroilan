@@ -13,7 +13,7 @@ public class Botanist extends Person implements Eater {
     }
 
     public void plant(Crop crop, CropRow cropRow) {
-        //cropRow.addCrop(crop);
+        cropRow.addSeeds(crop);
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Simulation;
 import com.zipcodewilmington.froilansfarm.Console;
+import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
 import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
@@ -17,7 +18,9 @@ public class Simulation {
         Farm mainFarm = new Farm("Froilan's Farm");
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
+        Person froilanda = new Botanist("Foilanda", 22, "Female");
         froilansHouse.addPerson(froilan);
+        froilansHouse.addPerson(froilanda);
         mainFarm.setFarmHouse(froilansHouse);
 
         return mainFarm;

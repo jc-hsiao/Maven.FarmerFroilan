@@ -24,6 +24,12 @@ public class FoodStorage {
         return foodStorage;
     }
 
+    public void takeFood(String foodName, Edible food) {
+        if (foodStorage.containsKey(foodName)) {
+            foodStorage.get(foodName).remove(food);
+        }
+    }
+
     public void updateFoodCount(String foodName, Produce newProduce, int howMany) {
         if (foodStorage.containsKey(foodName)) {
             for (int i = 0; i < howMany; i++) {
@@ -32,5 +38,17 @@ public class FoodStorage {
                 foodStorage.put(foodName, foodToBeAdded);
             }
         }
+    }
+
+    public void setFoodStorage(LinkedHashMap<String, ArrayList<Edible>> foodStorage) {
+        this.foodStorage = foodStorage;
+    }
+
+    public void setFoodToBeAdded(ArrayList<Edible> foodToBeAdded) {
+        this.foodToBeAdded = foodToBeAdded;
+    }
+
+    public void setListOfProduceToEat(Object[] listOfProduceToEat) {
+        this.listOfProduceToEat = listOfProduceToEat;
     }
 }

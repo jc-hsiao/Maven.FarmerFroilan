@@ -22,4 +22,7 @@ public class ChickenCoop {
         return chickens.get(index);
     }
 
+    public void setChickens(ArrayList<Chicken> chickens) {
+        this.chickens = chickens;
+    }
 }
