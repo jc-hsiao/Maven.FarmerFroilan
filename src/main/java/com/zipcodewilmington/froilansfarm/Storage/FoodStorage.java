@@ -33,4 +33,16 @@ public class FoodStorage {
             }
         }
     }
+
+    public void setFoodStorage(LinkedHashMap<String, ArrayList<Edible>> foodStorage) {
+        this.foodStorage = foodStorage;
+    }
+
+    public void setFoodToBeAdded(ArrayList<Edible> foodToBeAdded) {
+        this.foodToBeAdded = foodToBeAdded;
+    }
+
+    public void setListOfProduceToEat(Object[] listOfProduceToEat) {
+        this.listOfProduceToEat = listOfProduceToEat;
+    }
 }
