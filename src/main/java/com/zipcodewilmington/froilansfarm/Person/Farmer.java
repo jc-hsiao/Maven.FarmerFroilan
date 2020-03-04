@@ -13,6 +13,7 @@ public class Farmer extends Botanist {
     }
 
     public void fillFertilizer (CropDuster cropDuster) {
+        cropDuster.refillFertilizer();
 
     }
 }

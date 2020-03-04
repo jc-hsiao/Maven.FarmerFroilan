@@ -7,11 +7,13 @@ public class Horse extends Animal implements Rideable {
     private int age;
     private String color;
     private String name;
+    private boolean isMounted;
 
     public Horse(String name, String color, int age){
         this.age = age;
         this.color = color;
         this.name = name;
+        isMounted = false;
     }
 
     public Horse(){
@@ -48,5 +50,15 @@ public class Horse extends Animal implements Rideable {
 
     public void eat(Edible object) {
         
+    }
+
+    @Override
+    public void setMounted(boolean mounted) {
+        this.isMounted = mounted;
+    }
+
+    @Override
+    public boolean isMounted() {
+        return isMounted;
     }
 }
