@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 import com.zipcodewilmington.froilansfarm.Storage.Field;
-import com.zipcodewilmington.froilansfarm.Storage.FieldTest;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ public class CropDusterTest {
     private static final Logger LOGGER = Logger.getLogger(CropDusterTest.class.getName());
 
     @Test
-    public void hasFertilizerTest(){
+    public void hasFertilizerTest() throws Exception {
 
         CropDuster cd = new CropDuster();
         cd.setFertilizerAmount(0);
@@ -28,7 +26,7 @@ public class CropDusterTest {
     }
 
     @Test
-    public void refillFertilizerTest(){
+    public void refillFertilizerTest() throws Exception {
 
         CropDuster cd = new CropDuster();
         cd.setFertilizerAmount(2);
@@ -44,7 +42,7 @@ public class CropDusterTest {
     }
 
     @Test
-    public void fertilizeCropsTest(){
+    public void fertilizeCropsTest() throws Exception {
         CropDuster cd = new CropDuster();
         Field newField = new Field();
         cd.fertilizeCrops(newField,2);
@@ -62,7 +60,7 @@ public class CropDusterTest {
 
 
     @Test
-    public void flyTest(){
+    public void flyTest() throws Exception {
 
         CropDuster cd = new CropDuster();
 
