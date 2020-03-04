@@ -10,6 +10,7 @@ public class Farmer extends Botanist {
 
     public void tame(Animal animal) {
 
+
     }
 
     public void fillFertilizer (CropDuster cropDuster) {
