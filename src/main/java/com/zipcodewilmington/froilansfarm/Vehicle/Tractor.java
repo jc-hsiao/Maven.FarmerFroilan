@@ -14,7 +14,7 @@ public class Tractor extends FarmVehicle {
     public Tractor() {
     }
 
-    public ArrayList<Crop> harvestCrops(CropRow newRow) throws Exception {
+    public ArrayList<Crop> harvestCrops(CropRow newRow) {
         ArrayList<Crop> harvestedCrops = new ArrayList<>();
 
         for (Crop c : newRow.getCrops()) {
