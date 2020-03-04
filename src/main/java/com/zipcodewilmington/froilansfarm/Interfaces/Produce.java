@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Interfaces;
 
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
+
 public interface Produce {
-    void yield(Produce crop);
+    public Edible yield();
 }
