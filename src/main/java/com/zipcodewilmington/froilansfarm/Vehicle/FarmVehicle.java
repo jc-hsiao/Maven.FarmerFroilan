@@ -23,12 +23,13 @@ public abstract class FarmVehicle extends Vehicle {
         this.color = color;
     }
 
-    public Integer getGasLevel() throws Exception {
+    public Integer getGasLevel() {
         if (gasLevel < 0)
-            throw new Exception("Not enough fuel");
+            System.out.println("Yikes, you are crashing!!");
         else {
             return gasLevel;
         }
+        return gasLevel;
     }
 
     public void setGasLevel(Integer gasLevel) {
