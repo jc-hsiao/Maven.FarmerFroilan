@@ -15,12 +15,11 @@ public class CornStalk extends Crop {
     }
 
     public void addFruit(EarOfCorn corn) {
-        cornStalkWithCorn.add(corn); }
-
-        @Override
-        public Edible yield () {
-            return new EarOfCorn();
-        }
-
-
+        cornStalkWithCorn.add(corn);
     }
+
+    @Override
+    public Edible yield() {
+        return new EarOfCorn();
+    }
+}

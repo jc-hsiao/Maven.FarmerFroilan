@@ -10,14 +10,6 @@ public class Chicken extends Animal implements Produce {
 
     }
 
-    public void yield(Produce crop) {
-
-    }
-
-    public Egg layEgg(){
-        return new Egg();
-    }
-
     @Override
     public Edible yield() {
         return new Egg();
