@@ -10,13 +10,14 @@ public class TomatoPlant extends Crop {
         this.tomatoPlantWithFruit = new ArrayList<>();
     }
 
-    public void removeFruit(Tomato newTomato) {
-        tomatoPlantWithFruit.remove(newTomato);
+    public void removeFruit(Tomato fruit) {
+        tomatoPlantWithFruit.remove(fruit);
     }
 
-    public void addFruit(Tomato newTomato) {
-        tomatoPlantWithFruit.add(newTomato);
+    public void addFruit(Tomato fruit) {
+        tomatoPlantWithFruit.add(fruit);
     }
+
 
     @Override
     public Edible yield() {
