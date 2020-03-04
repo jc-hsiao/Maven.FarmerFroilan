@@ -20,9 +20,8 @@ public class StrangePlant extends Crop  {
         plantWithFruit.add(fruit);
     }
 
-
     @Override
     public Edible yield() {
-        return null;
+        return new StrangeFruit();
     }
 }

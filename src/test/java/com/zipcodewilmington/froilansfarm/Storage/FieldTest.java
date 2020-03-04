@@ -41,7 +41,7 @@ public class FieldTest {
     }
 
     @Test
-    public void getCropRow() {
+    public void getCropRowTest() {
         currentCropRow.addSeeds(currentCornStalk);
         anotherCropRow.addSeeds(currentTomatoPlant);
         currentField.addCropRow(currentCropRow);
@@ -51,4 +51,12 @@ public class FieldTest {
 
         Assert.assertFalse(currentField.field.isEmpty());
     }
+
+    @Test
+    public void getFieldSizeTest() {
+        Integer actual = currentField.getFieldSize();
+        Integer expected = 0;
+        Assert.assertEquals(expected, actual);
+    }
 }
+

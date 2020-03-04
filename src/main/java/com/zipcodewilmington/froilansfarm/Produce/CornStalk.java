@@ -6,6 +6,6 @@ public class CornStalk extends Crop {
 
     @Override
     public Edible yield() {
-        return null;
+        return new EarOfCorn();
     }
 }
