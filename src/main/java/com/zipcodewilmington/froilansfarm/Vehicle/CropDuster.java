@@ -27,7 +27,7 @@ public class CropDuster extends FarmVehicle implements Flyable {
     }
 
     public void fertilizeCrops(){
-
+    //for every row of crops it flies over, decrement gas&fertilizer by 1
 
 
     }
