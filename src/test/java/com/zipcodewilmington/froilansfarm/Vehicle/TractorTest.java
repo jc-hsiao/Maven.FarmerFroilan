@@ -20,7 +20,7 @@ public class TractorTest {
 
 
     @Test
-    public void harvestCropTest(){
+    public void harvestCropTest() throws Exception {
 
         ArrayList<Crop> actual;
 

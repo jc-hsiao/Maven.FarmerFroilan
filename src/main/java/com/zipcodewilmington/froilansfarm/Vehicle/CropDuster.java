@@ -27,7 +27,7 @@ public class CropDuster extends FarmVehicle implements Flyable {
         return true;
     }
 
-    public void fertilizeCrops(Field newField, Integer amtOfRows){
+    public void fertilizeCrops(Field newField, Integer amtOfRows) throws Exception {
 
         fly();
         newField.getCropRow(amtOfRows);
@@ -39,8 +39,13 @@ public class CropDuster extends FarmVehicle implements Flyable {
         }
     }
 
-    public Integer getFertilizerAmount() {
-        return fertilizerAmount;
+    public Integer getFertilizerAmount() throws Exception {
+
+        if(fertilizerAmount < 0) {
+            throw new Exception("Out of fertilizer"); }
+        else {
+            return fertilizerAmount;
+        }
     }
 
     public void setFertilizerAmount(Integer fertilizer) {
@@ -53,7 +58,7 @@ public class CropDuster extends FarmVehicle implements Flyable {
     }
 
     @Override
-    public void fly() {
+    public void fly() throws Exception {
 
         setGasLevel(getGasLevel()-1);
     }

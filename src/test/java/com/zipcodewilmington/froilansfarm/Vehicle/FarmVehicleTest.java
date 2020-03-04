@@ -9,7 +9,7 @@ public class FarmVehicleTest {
     private static final Logger LOGGER = Logger.getLogger(FarmVehicleTest.class.getName());
 
     @Test
-    public void isEmptyTest() {
+    public void isEmptyTest() throws Exception {
 
         FarmVehicle newFarmVehicle = new CropDuster();
         newFarmVehicle.setGasLevel(5);
@@ -34,7 +34,7 @@ public class FarmVehicleTest {
     }
 
     @Test
-    public void checkGasFieldTest() {
+    public void checkGasFieldTest() throws Exception {
 
         FarmVehicle newVehicle = new Tractor();
         Integer actual = newVehicle.getGasLevel();
@@ -45,7 +45,7 @@ public class FarmVehicleTest {
     }
 
     @Test
-    public void refillTest(){
+    public void refillTest() throws Exception {
 
         FarmVehicle newVehicle = new Tractor();
         newVehicle.setGasLevel(3);
