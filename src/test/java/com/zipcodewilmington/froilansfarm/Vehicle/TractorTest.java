@@ -1,11 +1,17 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.Produce.CornStalk;
+import com.zipcodewilmington.froilansfarm.Produce.Crop;
+import com.zipcodewilmington.froilansfarm.Produce.Tomato;
+import com.zipcodewilmington.froilansfarm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 import com.zipcodewilmington.froilansfarm.Storage.Field;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.notification.RunListener;
 
+import javax.swing.*;
+import java.util.ArrayList;
 import java.util.logging.Logger;
 
 public class TractorTest {
@@ -16,10 +22,24 @@ public class TractorTest {
     @Test
     public void harvestCropTest(){
 
+        ArrayList<Crop> actual;
+
         Tractor newTractor = new Tractor();
         CropRow newRow = new CropRow();
-        newTractor.harvestCrops(newRow);
+        newRow.addSeeds(new TomatoPlant());
+        newRow.addSeeds(new CornStalk());
+        newRow.addSeeds(new TomatoPlant());
+        newRow.addSeeds(new CornStalk());
 
+         actual = newTractor.harvestCrops(newRow);
+
+        Integer expected = 4;
+        Integer actualNum = actual.size();
+
+        Assert.assertEquals(expected,actualNum);
+        for (Crop c: actual) {
+            LOGGER.info("Gas is now "+newTractor.getGasLevel()); c.getClass().getSimpleName();
+        }
 
     }
 

@@ -19,8 +19,16 @@ public class Tractor extends FarmVehicle {
     }
 
     public ArrayList<Crop> harvestCrops(CropRow newRow){
-        return null;
+        ArrayList<Crop> harvestedCrops = new ArrayList<>();
 
+        for(Crop c : newRow.getCrops()){
+            harvestedCrops.add(c);
+            setGasLevel(getGasLevel()-1);
+        }
+
+
+
+        return harvestedCrops;
     }
 
     @Override
