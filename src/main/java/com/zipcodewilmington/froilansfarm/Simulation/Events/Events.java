@@ -3,6 +3,9 @@ import com.zipcodewilmington.froilansfarm.Console;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
+import com.zipcodewilmington.froilansfarm.Storage.Stable;
+
+import java.util.ArrayList;
 
 public interface Events {
 
@@ -16,6 +19,13 @@ public interface Events {
     static void everyMorning( Farm farm ){
         //thing that will happen every morning
         c.printlnWait("The early birds are chirping.");
+        ArrayList<Stable> stables = farm.getStables();
+        for(Stable s1:stables){
+            //c.printlnWait();
+        }
+
+
+
     }
 
 

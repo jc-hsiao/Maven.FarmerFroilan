@@ -9,7 +9,7 @@ public class FarmerTest {
 
     @Test
 
-    public void fertilizerTest() {
+    public void fertilizerTest() throws Exception {
         Farmer farmer = new Farmer("Dave", 33, "Male");
         CropDuster cropduster = new CropDuster(1, "Blue");
         farmer.fillFertilizer(cropduster);
