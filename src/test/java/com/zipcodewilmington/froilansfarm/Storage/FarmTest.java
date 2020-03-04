@@ -45,7 +45,7 @@ public class FarmTest {
         fields.add(new Field());
         fields.add(new Field());
         fields.add(new Field());
-        Farm myFarm = new Farm("My Farm",stables,chickenCoops,fields,new FarmHouse(),new FoodStorage());
+        Farm myFarm = new Farm("My Farm",stables,chickenCoops,fields,new FarmHouse(),new FoodStorage(),new FoodStorage());
         Assert.assertEquals( "My Farm", myFarm.getFarmName() );
         Assert.assertEquals( 2, myFarm.getChickenCoops().size());
         Assert.assertEquals( 4, myFarm.getStables().size());

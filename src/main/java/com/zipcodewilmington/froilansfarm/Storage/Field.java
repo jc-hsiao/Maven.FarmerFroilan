@@ -26,4 +26,8 @@ public class Field {
     public Integer getFieldSize() {
         return field.size();
     }
+
+    public void setField(ArrayList<CropRow> field) {
+        this.field = field;
+    }
 }

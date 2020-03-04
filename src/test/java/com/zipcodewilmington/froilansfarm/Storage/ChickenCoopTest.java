@@ -47,6 +47,16 @@ public class ChickenCoopTest {
         Assert.assertEquals(expectedChickenCoopSize, actualChickenCoopSize);
     }
 
+
+    @Test
+    public void removeChicken2Test() {
+        ChickenCoop cp = new ChickenCoop();
+        cp.addChicken(new Chicken());
+        cp.removeLastChicken();
+
+        Assert.assertEquals(0,cp.getNumChicken());
+    }
+
     @Test
     public void getChickenTest() {
         currentChickenCoop.addChicken(chicken);
