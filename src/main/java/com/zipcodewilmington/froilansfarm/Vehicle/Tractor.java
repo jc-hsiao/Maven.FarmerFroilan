@@ -1,6 +1,10 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Produce.Crop;
+import com.zipcodewilmington.froilansfarm.Storage.CropRow;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
+
+import java.util.ArrayList;
 
 public class Tractor extends FarmVehicle {
 
@@ -11,9 +15,13 @@ public class Tractor extends FarmVehicle {
     public Tractor() {
     }
 
-    public Crop harvestCrops(){
+    public ArrayList<Crop> harvestCrops(CropRow newRow, Integer amtOfRows){
+        ArrayList<Crop> harvestedCrops = new ArrayList<>();
 
-        return null;
+        for(int i = 0; i < amtOfRows; i++){
+
+        }
+        return harvestedCrops;
 
     }
 

@@ -5,6 +5,8 @@ import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public abstract class Vehicle implements NoiseMaker, Rideable {
 
+    private Integer gasLevel = 10;
+
     private Integer id;
 
     public Vehicle(Integer id) {
@@ -12,6 +14,13 @@ public abstract class Vehicle implements NoiseMaker, Rideable {
     }
 
     public Vehicle() {
+    }
+    public Integer getGasLevel() {
+        return gasLevel;
+    }
+
+    public void setGasLevel(Integer gasLevel) {
+        this.gasLevel = gasLevel;
     }
 
     public Integer getId() {

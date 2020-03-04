@@ -1,6 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Interfaces.Flyable;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
 
 import java.util.logging.Logger;
 
@@ -26,8 +27,16 @@ public class CropDuster extends FarmVehicle implements Flyable {
         return true;
     }
 
-    public void fertilizeCrops(){
-    //for every row of crops it flies over, decrement gas&fertilizer by 1
+    public void fertilizeCrops(Field newField, Integer amtOfRows){
+
+        fly();
+        newField.getCropRow(amtOfRows);
+
+        for (int i = 0; i <amtOfRows  ; i++) {
+            setGasLevel(getGasLevel() - 1);
+            setFertilizerAmount(getFertilizerAmount() - 1);
+
+        }
 
 
     }

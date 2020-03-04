@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import com.zipcodewilmington.froilansfarm.Storage.CropRow;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.notification.RunListener;
@@ -13,6 +15,10 @@ public class TractorTest {
 
     @Test
     public void harvestCropTest(){
+
+        Tractor newTractor = new Tractor();
+        CropRow newRow = new CropRow();
+
 
     }
 

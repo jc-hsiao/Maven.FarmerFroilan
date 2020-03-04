@@ -1,6 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
+import com.zipcodewilmington.froilansfarm.Storage.Field;
+import com.zipcodewilmington.froilansfarm.Storage.FieldTest;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -43,8 +45,18 @@ public class CropDusterTest {
 
     @Test
     public void fertilizeCropsTest(){
+        CropDuster cd = new CropDuster();
+        Field newField = new Field();
+        cd.fertilizeCrops(newField,2);
+        Integer expGas = 7;
+        Integer actGas = cd.getGasLevel();
+        Integer expFertilizer = 6;
+        Integer actFertilizer = cd.getFertilizerAmount();
 
-
+        Assert.assertEquals(expFertilizer,actFertilizer);
+        LOGGER.info("Fertiizer amount is "+actFertilizer);
+        Assert.assertEquals(expGas,actGas);
+        LOGGER.info("Gas level is " + actGas);
     }
 
 
