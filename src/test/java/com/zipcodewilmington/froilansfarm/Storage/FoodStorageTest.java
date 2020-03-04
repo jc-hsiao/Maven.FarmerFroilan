@@ -1,12 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 import com.zipcodewilmington.froilansfarm.Produce.StrangeFruit;
 import com.zipcodewilmington.froilansfarm.Produce.StrangePlant;
 import org.junit.Assert;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import org.junit.Test;
-
 import java.util.ArrayList;
 
 public class FoodStorageTest {
