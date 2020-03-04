@@ -1,5 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
+import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
+import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
+import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -45,13 +48,18 @@ public class FarmTest {
         fields.add(new Field());
         fields.add(new Field());
         fields.add(new Field());
-        Farm myFarm = new Farm("My Farm",stables,chickenCoops,fields,new FarmHouse(),new FoodStorage(),new FoodStorage());
+        ArrayList<FarmVehicle> vehicles = new ArrayList<>();
+        vehicles.add(new Tractor());
+        vehicles.add(new CropDuster());
+        Farm myFarm = new Farm("My Farm",stables,chickenCoops,fields,new FarmHouse(),new FoodStorage(),new FoodStorage(),vehicles);
         Assert.assertEquals( "My Farm", myFarm.getFarmName() );
         Assert.assertEquals( 2, myFarm.getChickenCoops().size());
         Assert.assertEquals( 4, myFarm.getStables().size());
         Assert.assertEquals( 3, myFarm.getFields().size());
         Assert.assertNotNull(myFarm.getFarmHouse());
         Assert.assertNotNull(myFarm.getFoodStorage());
+        Assert.assertNotNull(myFarm.getAnimalFoodStorage());
+        Assert.assertEquals( 2, myFarm.getVehicles().size());
     }
 
     @Test
@@ -151,6 +159,26 @@ public class FarmTest {
         myFarm.setFields(fields);
         Assert.assertArrayEquals( fields.toArray() , myFarm.getFields().toArray() );
         Assert.assertEquals( fields.size(), myFarm.getFields().size());
+    }
+
+    @Test
+    public void setVehicleTest(){
+        Farm myFarm = new Farm();
+        ArrayList<FarmVehicle> vehicles = new ArrayList<>();
+        vehicles.add(new Tractor());
+        vehicles.add(new CropDuster());
+        myFarm.setVehicles(vehicles);
+
+        Assert.assertArrayEquals( vehicles.toArray() , myFarm.getVehicles().toArray() );
+        Assert.assertEquals( vehicles.size(), myFarm.getVehicles().size());
+    }
+
+    @Test
+    public void setAnimalStorageTest(){
+        Farm myFarm = new Farm();
+        FoodStorage fs = new FoodStorage();
+        myFarm.setFoodStorage(fs);
+        Assert.assertEquals(fs, myFarm.getFoodStorage() );
     }
 
 }

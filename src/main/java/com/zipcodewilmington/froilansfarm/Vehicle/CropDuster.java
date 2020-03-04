@@ -17,39 +17,49 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     public CropDuster() {super();}
 
-    public Boolean hasFertilizer(){
-        return fertilizerAmount != 0;
+
+    public Boolean hasFertilizer() {
+
+        if (fertilizerAmount == 0) {
+            return false;
+        }
+        return true;
     }
 
-    public void fertilizeCrops(Field newField, Integer amtOfRows){
+    public void fertilizeCrops(Field newField, Integer amtOfRows) throws Exception {
 
         fly();
         newField.getCropRow(amtOfRows);
 
-        for (int i = 0; i <amtOfRows  ; i++) {
+        for (int i = 0; i < amtOfRows; i++) {
             setGasLevel(getGasLevel() - 1);
             setFertilizerAmount(getFertilizerAmount() - 1);
 
         }
     }
 
-    public Integer getFertilizerAmount() {
-        return fertilizerAmount;
+    public Integer getFertilizerAmount() throws Exception {
+
+        if (fertilizerAmount < 0) {
+            throw new Exception("Out of fertilizer");
+        } else {
+            return fertilizerAmount;
+        }
     }
 
     public void setFertilizerAmount(Integer fertilizer) {
         this.fertilizerAmount = fertilizer;
     }
 
-    public void refillFertilizer(){
-    setFertilizerAmount(8);
+    public void refillFertilizer() {
+        setFertilizerAmount(8);
 
     }
 
     @Override
-    public void fly() {
+    public void fly() throws Exception {
 
-        setGasLevel(getGasLevel()-1);
+        setGasLevel(getGasLevel() - 1);
     }
 
     @Override
