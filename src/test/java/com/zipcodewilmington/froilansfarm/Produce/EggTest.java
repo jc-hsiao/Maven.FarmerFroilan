@@ -9,6 +9,6 @@ public class EggTest {
         Egg egg1 = new Egg();
         Assert.assertEquals("eggy",egg1.getFlavor());
         Assert.assertEquals(0.3,egg1.getQuality(),0.01);
-        Assert.assertFalse(egg1.isFertile);
+        Assert.assertFalse(egg1.isFertile());
     }
 }

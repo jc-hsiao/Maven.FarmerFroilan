@@ -2,10 +2,14 @@ package com.zipcodewilmington.froilansfarm.Produce;
 
 public class Egg extends Edible {
 
-    boolean isFertile;
+    private boolean isFertile;
 
     public Egg() {
-        super(0.3, "eggy");
+        this(0.3);
+    }
+
+    public Egg(double quality){
+        super(quality, "eggy");
         isFertile = false;
     }
 
