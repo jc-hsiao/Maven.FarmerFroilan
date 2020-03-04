@@ -22,4 +22,8 @@ public class Field {
         }
         return null;
     }
+
+    public Integer getFieldSize() {
+        return field.size();
+    }
 }
