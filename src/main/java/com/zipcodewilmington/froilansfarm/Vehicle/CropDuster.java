@@ -37,8 +37,6 @@ public class CropDuster extends FarmVehicle implements Flyable {
             setFertilizerAmount(getFertilizerAmount() - 1);
 
         }
-
-
     }
 
     public Integer getFertilizerAmount() {
@@ -53,8 +51,6 @@ public class CropDuster extends FarmVehicle implements Flyable {
     setFertilizerAmount(8);
 
     }
-
-
 
     @Override
     public void fly() {

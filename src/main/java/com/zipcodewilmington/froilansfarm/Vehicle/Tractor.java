@@ -26,8 +26,6 @@ public class Tractor extends FarmVehicle {
             setGasLevel(getGasLevel()-1);
         }
 
-
-
         return harvestedCrops;
     }
 
