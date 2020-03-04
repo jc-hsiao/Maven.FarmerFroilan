@@ -24,7 +24,6 @@ public class Simulation {
     public static Farm setUpScenario(){
         //create all the people/animal/plants/buildings here
         //will return a Farm that is stuffed with everything we need for simulation.
-
         Farm mainFarm = new Farm("Froilan's Farm");
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
@@ -32,11 +31,14 @@ public class Simulation {
         froilansHouse.addPerson(froilan);
         froilansHouse.addPerson(froilanda);
         mainFarm.setFarmHouse(froilansHouse);
-        Tractor tractor = new Tractor();
-        CropDuster cropDuster = new CropDuster();
-        ArrayList<ChickenCoop> chickenCoopList = new ArrayList<>();
-        ArrayList<Stable> stableList = new ArrayList<>();
+        mainFarm.setChickenCoops(setUpChickenCoops());
+        mainFarm.setStables(setUpStables());
+        mainFarm.setVehicles(setUpVehicle());
+        return mainFarm;
+    }
 
+    public static ArrayList<ChickenCoop> setUpChickenCoops(){
+        ArrayList<ChickenCoop> chickenCoopList = new ArrayList<>();
         for (int i = 0; i < 4; i++) {
             ChickenCoop chickenCoop = new ChickenCoop();
             for (int j = 0; j < 4; j++) {
@@ -45,8 +47,11 @@ public class Simulation {
             chickenCoopList.add(chickenCoop);
         }
         chickenCoopList.get(3).removeLastChicken();
-        mainFarm.setChickenCoops(chickenCoopList);
+        return chickenCoopList;
+    }
 
+    public static ArrayList<Stable> setUpStables(){
+        ArrayList<Stable> stableList = new ArrayList<>();
         for (int i = 0; i < 3; i++) {
             Stable stable = new Stable();
             for (int j = 0; j < 10; j++) {
@@ -54,13 +59,18 @@ public class Simulation {
             }
             stableList.add(stable);
         }
-        mainFarm.setStables(stableList);
+        return stableList;
+    }
+
+    public static ArrayList<FarmVehicle> setUpVehicle(){
         ArrayList<FarmVehicle> vehicles = new ArrayList<>();
+        Tractor tractor = new Tractor();
+        CropDuster cropDuster = new CropDuster();
         vehicles.add(tractor);
         vehicles.add(cropDuster);
-        mainFarm.setVehicles(vehicles);
-        return mainFarm;
+        return vehicles;
     }
+
 
     public static void simulate(Farm someFarm){
         c.printlnWaitWithTime(2500L, "The simulation for the week will be starting soon...");
