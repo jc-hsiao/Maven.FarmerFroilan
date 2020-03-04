@@ -4,16 +4,19 @@ import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public class Horse extends Animal implements Rideable {
+
     private int age;
     private String color;
     private String name;
     private boolean isMounted;
+    private boolean isDocile;
 
     public Horse(String name, String color, int age){
         this.age = age;
         this.color = color;
         this.name = name;
         isMounted = false;
+        isDocile = false;
     }
 
     public Horse(){
@@ -44,9 +47,11 @@ public class Horse extends Animal implements Rideable {
         this.name = name;
     }
 
-    public void gallop(){
-        setHappy(true);;
-    }
+    public boolean isDocile() { return isDocile; }
+
+    public void setDocile(boolean docile) { isDocile = docile; }
+
+    public void gallop(){ setHappy(true);; }
 
     public void eat(Edible object) {
         
@@ -59,6 +64,12 @@ public class Horse extends Animal implements Rideable {
 
     @Override
     public boolean isMounted() {
-        return isMounted;
+        if(isDocile){
+            isMounted = false;
+            return false;
+        } else{
+            isMounted = true;
+            return true;
+        }
     }
 }
