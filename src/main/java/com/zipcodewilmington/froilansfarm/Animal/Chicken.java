@@ -16,4 +16,5 @@ public class Chicken extends Animal implements Produce {
     public void eat(Edible food, FoodStorage storage) {
         storage.takeFood(food.getClass().getSimpleName(),food);
     }
+
 }

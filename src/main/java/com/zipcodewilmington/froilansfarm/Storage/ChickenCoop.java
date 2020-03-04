@@ -18,11 +18,18 @@ public class ChickenCoop {
         chickens.remove(chick);
     }
 
+    public void removeLastChicken() {
+        chickens.remove(chickens.size()-1);
+    }
+
     public Chicken getChicken(Integer index) {
         return chickens.get(index);
     }
 
+    public int getNumChicken(){return chickens.size();}
+
     public void setChickens(ArrayList<Chicken> chickens) {
         this.chickens = chickens;
     }
+
 }
