@@ -30,7 +30,7 @@ public class Simulation {
         c.printlnWaitWithTime(2000L, "The simulation for the week is starting.");
 
         for (WeekDay d :WeekDay.values()) {
-            c.printlnWait("It's "+d.getWeekDayName()+"!");
+            c.printlnWait(" [ It's "+d.getWeekDayName()+"! ] ");
             Events.everyMorning(someFarm);
             d.getWeekDayEvents().run(someFarm);
             Events.everyNight(someFarm);
