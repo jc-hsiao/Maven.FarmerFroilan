@@ -8,7 +8,7 @@ public class Horse extends Animal implements Rideable {
     private String color;
     private String name;
 
-    public Horse(int age, String color, String name){
+    public Horse(String name, String color, int age){
         this.age = age;
         this.color = color;
         this.name = name;
