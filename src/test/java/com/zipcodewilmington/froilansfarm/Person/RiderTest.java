@@ -14,8 +14,9 @@ public class RiderTest {
 
     @Test
     public void mountSuccessTest() {
-        Rider someRider = new Farmer("Bill", 47, "Male");
-        Rideable someRideable = new Horse("Max", "White", 2);
+        Farmer someRider = new Farmer("Bill", 47, "Male");
+        Horse someRideable = new Horse("Max", "White", 2);
+        someRider.tame(someRideable);
         boolean actual = someRider.mount(someRideable);
         Assert.assertTrue(actual);
 
@@ -35,8 +36,9 @@ public class RiderTest {
 
     @Test
     public void dismountSuccessTest() {
-        Rider someRider = new Farmer("Bill", 47, "Male");
-        Rideable someRideable = new Horse("Max", "White", 2);
+        Farmer someRider = new Farmer("Bill", 47, "Male");
+        Horse someRideable = new Horse("Max", "White", 2);
+        someRider.tame(someRideable);
         someRider.mount(someRideable);
         boolean actual = someRider.dismount(someRideable);
         Assert.assertTrue(actual);
