@@ -8,9 +8,7 @@ public class CornStalkTest {
     @Test
     public void YieldCornTest() {
         Crop corn3 = new CornStalk();
-        Edible actual = new EarOfCorn();
-
         Edible expected = corn3.yield();
-        Assert.assertEquals(actual, expected);
+        Assert.assertTrue (expected instanceof EarOfCorn);
     }
 }

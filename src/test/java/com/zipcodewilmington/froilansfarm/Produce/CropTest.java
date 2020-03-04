@@ -5,13 +5,6 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class CropTest {
-    @Test
-    public void YieldCornTest() {
-        Crop corn3 = new CornStalk();
-        Edible actual = EarOfCorn;
-        corn3.yield(Edible);
-        Assert.assertEquals(corn3.checkIfHarvested(), EarOfCorn);
-    }
 
     @Test
     public void tomatoTest() {
