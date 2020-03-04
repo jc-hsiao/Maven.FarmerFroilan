@@ -1,5 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Person;
 
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import org.junit.Assert;
 import org.junit.Test;
@@ -32,6 +33,14 @@ public class FarmerTest {
         Assert.assertEquals(expectedAge, actualAge);
         Assert.assertEquals(expectedGender, actualGender);
 
+    }
+
+    @Test
+    public void tameTest () {
+        Farmer farmer = new Farmer("Dave", 33, "Male");
+        Horse horse = new Horse ();
+        farmer.tame(horse);
+        Assert.assertTrue(horse.isDocile());
     }
 
 }
