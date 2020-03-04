@@ -1,23 +1,23 @@
 package com.zipcodewilmington.froilansfarm.Animal;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Rideable;
 
 public class Horse extends Animal implements Rideable {
     private int age;
     private String color;
     private String name;
+    private boolean isMounted;
 
     public Horse(String name, String color, int age){
         this.age = age;
         this.color = color;
         this.name = name;
+        isMounted = false;
     }
 
     public Horse(){
-        this.age = 0;
-        this.color = "";
-        this.name = "";
+        this("","",0);
     }
 
     public int getAge(){
@@ -45,10 +45,20 @@ public class Horse extends Animal implements Rideable {
     }
 
     public void gallop(){
-
+        setHappy(true);;
     }
 
     public void eat(Edible object) {
 
+    }
+
+    @Override
+    public void setMounted(boolean mounted) {
+        this.isMounted = mounted;
+    }
+
+    @Override
+    public boolean isMounted() {
+        return isMounted;
     }
 }

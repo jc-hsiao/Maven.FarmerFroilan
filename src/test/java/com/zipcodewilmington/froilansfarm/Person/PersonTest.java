@@ -41,17 +41,17 @@ public class PersonTest {
     @Test
     public void setAgeTest() {
         Person babyTwo = new Farmer("", 2, "Male");
-        babyTwo.setAge(2);
+        babyTwo.setAge(4);
 
-        Assert.assertEquals(2, babyTwo.getAge());
+        Assert.assertEquals(4, babyTwo.getAge());
 
     }
 
     @Test
     public void setGenderTest() {
         Person babyThree = new Farmer("", 0, "Male");
-        babyThree.setGender("Male");
+        babyThree.setGender("Female");
 
-        Assert.assertEquals("Male", babyThree.getGender());
+        Assert.assertEquals("Female", babyThree.getGender());
     }
 }

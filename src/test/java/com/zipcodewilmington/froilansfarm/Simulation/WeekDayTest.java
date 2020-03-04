@@ -1,4 +1,4 @@
-package com.zipcodewilmington.froilansfarm.Utils;
+package com.zipcodewilmington.froilansfarm.Simulation;
 
 import org.junit.Assert;
 import org.junit.Test;
