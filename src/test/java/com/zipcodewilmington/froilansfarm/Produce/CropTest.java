@@ -6,14 +6,12 @@ import org.junit.Test;
 
 public class CropTest {
     @Test
-    public void EarCornTest() {
+    public void YieldCornTest() {
         Crop corn3 = new CornStalk();
-//        Edible actual = Produce.yield();
-        corn3.setHarvested(true);
-//        Assert.assertEquals(corn3.checkIfHarvested(), EarOfCorn);
-
+        Edible actual = EarOfCorn;
+        corn3.yield(Edible);
+        Assert.assertEquals(corn3.checkIfHarvested(), EarOfCorn);
     }
-
 
     @Test
     public void tomatoTest() {

@@ -25,8 +25,5 @@ public abstract class Crop implements Produce {
         return isHarvested;
     }
 
-    @Override
-    public void yield(Produce crop) {
 
-    }
 }
