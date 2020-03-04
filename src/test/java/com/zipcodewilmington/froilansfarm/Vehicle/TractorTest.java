@@ -2,15 +2,11 @@ package com.zipcodewilmington.froilansfarm.Vehicle;
 
 import com.zipcodewilmington.froilansfarm.Produce.CornStalk;
 import com.zipcodewilmington.froilansfarm.Produce.Crop;
-import com.zipcodewilmington.froilansfarm.Produce.Tomato;
 import com.zipcodewilmington.froilansfarm.Produce.TomatoPlant;
 import com.zipcodewilmington.froilansfarm.Storage.CropRow;
-import com.zipcodewilmington.froilansfarm.Storage.Field;
 import org.junit.Assert;
 import org.junit.Test;
-import org.junit.runner.notification.RunListener;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
@@ -40,10 +36,7 @@ public class TractorTest {
         for (Crop c: actual) {
             LOGGER.info("Gas is now "+newTractor.getGasLevel()); c.getClass().getSimpleName();
         }
-
     }
-
-
 
     @Test
     public void makeNoiseTest() {

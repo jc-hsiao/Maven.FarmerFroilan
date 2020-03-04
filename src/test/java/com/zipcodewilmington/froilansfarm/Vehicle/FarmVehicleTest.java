@@ -40,7 +40,6 @@ public class FarmVehicleTest {
         Integer actual = newVehicle.getGasLevel();
         Integer expected = 10;
         Assert.assertEquals(expected, actual);
-
         LOGGER.info("" + actual);
     }
 

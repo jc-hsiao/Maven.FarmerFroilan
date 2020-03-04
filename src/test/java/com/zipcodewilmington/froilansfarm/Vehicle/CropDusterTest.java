@@ -1,8 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
-import com.zipcodewilmington.froilansfarm.Storage.CropRow;
 import com.zipcodewilmington.froilansfarm.Storage.Field;
-import com.zipcodewilmington.froilansfarm.Storage.FieldTest;
 import org.junit.Assert;
 import org.junit.Test;
 
