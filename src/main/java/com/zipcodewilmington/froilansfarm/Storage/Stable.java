@@ -47,6 +47,10 @@ public class Stable {
             isClean = true;
     }
 
+    public boolean checkIfClean(){
+        return isClean;
+    }
+
     public void getsDirty(){
         isClean = false;
     }
