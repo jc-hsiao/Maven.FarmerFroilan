@@ -1,5 +1,5 @@
 package com.zipcodewilmington.froilansfarm.Person;
-import com.zipcodewilmington.froilansfarm.Animal.Animal;
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 
 public class Farmer extends Botanist {
@@ -8,9 +8,8 @@ public class Farmer extends Botanist {
         super(name, age, gender);
     }
 
-    public void tame(Animal animal) {
-
-
+    public void tame(Horse horse) {
+        horse.setDocile(true);
     }
 
     public void fillFertilizer (CropDuster cropDuster) {

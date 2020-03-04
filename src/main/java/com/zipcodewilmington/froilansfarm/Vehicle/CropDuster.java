@@ -15,16 +15,10 @@ public class CropDuster extends FarmVehicle implements Flyable {
         super(id, color);
     }
 
-    public CropDuster() {
-
-    }
+    public CropDuster() {super();}
 
     public Boolean hasFertilizer(){
-
-        if(fertilizerAmount == 0){
-            return false;
-        }
-        return true;
+        return fertilizerAmount != 0;
     }
 
     public void fertilizeCrops(Field newField, Integer amtOfRows){
