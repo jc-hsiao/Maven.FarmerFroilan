@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Produce;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -8,9 +8,9 @@ public class CropTest {
     @Test
     public void EarCornTest() {
         Crop corn3 = new CornStalk();
-//        Edible actual = corn3.checkIfHarvested();
+//        Edible actual = Produce.yield();
         corn3.setHarvested(true);
-        Assert.assertTrue(corn3.checkIfHarvested());
+//        Assert.assertEquals(corn3.checkIfHarvested(), EarOfCorn);
 
     }
 

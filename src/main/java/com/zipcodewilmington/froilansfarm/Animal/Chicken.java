@@ -1,7 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Animal;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
 import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
+import com.zipcodewilmington.froilansfarm.Produce.Egg;
 
 public class Chicken extends Animal implements Produce {
 
@@ -13,7 +14,7 @@ public class Chicken extends Animal implements Produce {
 
     }
 
-    //  public Egg layEgg(){
-        //return egg object
-    //}
+    public Egg layEgg(){
+        return new Egg();
+    }
 }

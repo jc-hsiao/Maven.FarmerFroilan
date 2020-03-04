@@ -1,9 +1,8 @@
 package com.zipcodewilmington.froilansfarm.Produce;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+public class Tomato extends Edible {
 
-public class Tomato implements Edible {
-
-    //if isFertilized = true, can be harvested
-    //if isHarvested = true, return Tomato;
+    public Tomato() {
+        super(0.3,"sour and juicy");
+    }
 }

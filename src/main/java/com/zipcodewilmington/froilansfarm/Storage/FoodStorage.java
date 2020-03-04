@@ -1,6 +1,6 @@
 package com.zipcodewilmington.froilansfarm.Storage;
 
-import com.zipcodewilmington.froilansfarm.Interfaces.Edible;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

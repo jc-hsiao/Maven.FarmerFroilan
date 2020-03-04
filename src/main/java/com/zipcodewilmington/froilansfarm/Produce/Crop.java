@@ -3,7 +3,6 @@ package com.zipcodewilmington.froilansfarm.Produce;
 import com.zipcodewilmington.froilansfarm.Interfaces.Produce;
 public abstract class Crop implements Produce {
 
-
     private boolean isFertilized;
     private boolean isHarvested;
 
@@ -24,5 +23,10 @@ public abstract class Crop implements Produce {
     public boolean checkIfHarvested() {
 
         return isHarvested;
+    }
+
+    @Override
+    public void yield(Produce crop) {
+
     }
 }
