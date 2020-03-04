@@ -8,12 +8,8 @@ import java.util.LinkedHashMap;
 public class FoodStorage {
     LinkedHashMap<String, ArrayList<Edible>> foodStorage;
 
-    public FoodStorage(LinkedHashMap<String, ArrayList<Edible>> foodStorage) {
-        this.foodStorage = foodStorage;
-    }
-
     public FoodStorage() {
-        this.foodStorage = null;
+        this.foodStorage = new LinkedHashMap<>();
     }
 
     public void addEdible(String newFood, ArrayList<Edible> food) {
@@ -22,10 +18,6 @@ public class FoodStorage {
 
     public void getFoodKey() {
         this.foodStorage.keySet();
-    }
-
-    public void getFoodValue() {
-
     }
 
     public LinkedHashMap<String, ArrayList<Edible>> getFoodStorage() {
