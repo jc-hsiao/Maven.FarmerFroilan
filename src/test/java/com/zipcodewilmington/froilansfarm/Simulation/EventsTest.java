@@ -27,7 +27,7 @@ public class EventsTest {
     @Test
     public void getMC2Test(){
         Botanist mc = getMC2(farm);
-        Assert.assertEquals("Foilanda",mc.getName());
+        Assert.assertEquals("Froilanda",mc.getName());
         Assert.assertEquals(22,mc.getAge());
         Assert.assertEquals("Female",mc.getGender());
     }

@@ -24,7 +24,7 @@ public interface Events {
     }
 
     static Botanist getMC2(Farm farm){
-        return (Botanist)farm.getFarmHouse().getPerson("Foilanda");
+        return (Botanist)farm.getFarmHouse().getPerson("Froilanda");
     }
 
     static void everyMorning( Farm farm ){
