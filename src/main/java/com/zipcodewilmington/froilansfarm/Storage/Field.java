@@ -15,12 +15,7 @@ public class Field {
     }
 
     public CropRow getCropRow(Integer numberCropRow) {
-        for (CropRow element : field) {
-            if (element.equals(numberCropRow)) {
-                return element;
-            }
-        }
-        return null;
+        return field.get(numberCropRow);
     }
 
     public Integer getFieldSize() {

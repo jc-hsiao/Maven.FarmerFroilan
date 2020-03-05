@@ -13,13 +13,14 @@ public abstract class Crop implements Produce {
     public void setFertilized(boolean fertilizeStatus){
         isFertilized = fertilizeStatus;
     }
-    public boolean checkIfFertilized(){
 
+    public boolean checkIfFertilized(){
         return isFertilized;
     }
     public void setHarvested(boolean harvestedStatus){
         isHarvested = harvestedStatus;
     }
+
     public boolean checkIfHarvested() {
 
         return isHarvested;

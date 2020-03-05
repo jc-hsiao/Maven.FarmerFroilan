@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 public class CropDuster extends FarmVehicle implements Flyable {
     private static final Logger LOGGER = Logger.getLogger(CropDuster.class.getName());
 
-    Integer fertilizerAmount = 8;
+    Integer fertilizerAmount = 5000;
 
     public CropDuster(Integer id, String color) {
         super(id, color);
@@ -18,8 +18,8 @@ public class CropDuster extends FarmVehicle implements Flyable {
     public CropDuster() {super();}
 
     public Boolean hasFertilizer() {
-
-        if (fertilizerAmount == 0) {
+        if (fertilizerAmount < 1) {
+            LOGGER.info("\nYou are out of fertilizer. Please refill.");
             return false;
         }
         return true;
@@ -45,7 +45,7 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     public Integer getFertilizerAmount() {
 
-        if (fertilizerAmount < 0) {
+        if (fertilizerAmount < 1) {
             System.out.println("Out of fertilizer. You are fertilizing nothing now.");
         } else {
             return fertilizerAmount;
@@ -59,18 +59,15 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     public void refillFertilizer() {
         setFertilizerAmount(8);
-
     }
 
     @Override
     public void fly() {
-
         setGasLevel(getGasLevel() - 1);
     }
 
     @Override
     public String makeNoise() {
-
         return "puh puh puh";
     }
 }

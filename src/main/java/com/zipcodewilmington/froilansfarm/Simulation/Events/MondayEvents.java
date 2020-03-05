@@ -7,6 +7,7 @@ import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 
 public class MondayEvents implements Events{
     Person froilanda;
+    CropDuster temp;
 
     public void run(Farm farm) {
         createFroilanda(farm);
