@@ -5,15 +5,15 @@ import com.zipcodewilmington.froilansfarm.Console;
 import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
+import com.zipcodewilmington.froilansfarm.Produce.EarOfCorn;
+import com.zipcodewilmington.froilansfarm.Produce.Edible;
+import com.zipcodewilmington.froilansfarm.Produce.Egg;
+import com.zipcodewilmington.froilansfarm.Produce.Tomato;
 import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
-import com.zipcodewilmington.froilansfarm.Storage.ChickenCoop;
-import com.zipcodewilmington.froilansfarm.Storage.Farm;
-import com.zipcodewilmington.froilansfarm.Storage.FarmHouse;
-import com.zipcodewilmington.froilansfarm.Storage.Stable;
+import com.zipcodewilmington.froilansfarm.Storage.*;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
 import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 import com.zipcodewilmington.froilansfarm.Vehicle.Tractor;
-import com.zipcodewilmington.froilansfarm.Vehicle.Vehicle;
 
 import java.util.ArrayList;
 
@@ -34,7 +34,26 @@ public class Simulation {
         mainFarm.setChickenCoops(setUpChickenCoops());
         mainFarm.setStables(setUpStables());
         mainFarm.setVehicles(setUpVehicle());
+        mainFarm.setFoodStorage(setUpStorage());
+        mainFarm.setAnimalFoodStorage(setUpStorage());
         return mainFarm;
+    }
+
+    public static FoodStorage setUpStorage(){
+        FoodStorage someStorage = new FoodStorage();
+        ArrayList<Edible> manyCorns = new ArrayList<>();
+        ArrayList<Edible> manyTomato = new ArrayList<>();
+        ArrayList<Edible> manyEgg = new ArrayList<>();
+        for (int i = 0; i < 30 ; i++) {
+            manyCorns.add(new EarOfCorn());
+            manyTomato.add(new Tomato());
+            manyEgg.add(new Egg());
+        }
+        someStorage.addFoodSet("EarOfCorn", manyCorns);
+        someStorage.addFoodSet("Tomato", manyTomato);
+        someStorage.addFoodSet("Egg", manyEgg);
+
+        return someStorage;
     }
 
     public static ArrayList<ChickenCoop> setUpChickenCoops(){
@@ -52,13 +71,30 @@ public class Simulation {
 
     public static ArrayList<Stable> setUpStables(){
         ArrayList<Stable> stableList = new ArrayList<>();
+        String[] horseNames = {
+                "Snowy",
+                "Epona",
+                "Bullet",
+                "Spirit",
+                "Sea Biscuit",
+                "Hidalgo",
+                "Lynel",
+                "Dusk",
+                "Dawn",
+                "Blupee",
+                "",
+                ""
+        };
         for (int i = 0; i < 3; i++) {
             Stable stable = new Stable();
-            for (int j = 0; j < 10; j++) {
-                stable.addHorse(new Horse());
+            for (int j = 0; j < 4; j++) {
+                stable.addHorse(new Horse(horseNames[4*i + j]));
             }
             stableList.add(stable);
         }
+        stableList.get(stableList.size()-1).removeHorse("");
+        stableList.get(stableList.size()-1).removeHorse("");
+
         return stableList;
     }
 

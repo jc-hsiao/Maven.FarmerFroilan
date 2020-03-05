@@ -14,7 +14,7 @@ public class Chicken extends Animal implements Produce {
 
     @Override
     public void eat(Edible food, FoodStorage storage) {
-        storage.takeFood(food.getClass().getSimpleName(),food);
+        storage.takeLastFood(food.getClass().getSimpleName());
     }
 
 }

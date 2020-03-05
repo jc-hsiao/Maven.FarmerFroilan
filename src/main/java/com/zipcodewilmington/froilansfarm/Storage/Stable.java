@@ -3,6 +3,7 @@ import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import java.util.ArrayList;
 public class Stable {
 
+
     private ArrayList<Horse> horses;
     boolean isClean = true;
 
@@ -26,6 +27,10 @@ public class Stable {
         Horse h = getHorse(name);
         horses.remove(h);
         return h;
+    }
+
+    public Horse removeLastHorse(){
+        return horses.remove(horses.size()-1);
     }
 
     public Horse getHorse(String name){
@@ -63,5 +68,8 @@ public class Stable {
         return s.toString();
     }
 
+    public ArrayList<Horse> getHorses() {
+        return horses;
+    }
 
 }

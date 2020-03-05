@@ -20,6 +20,10 @@ public class Horse extends Animal implements Rideable {
         isDocile = false;
     }
 
+    public Horse(String name){
+        this(name,"",1);
+    }
+
     public Horse(){
         this("","",0);
     }
@@ -73,6 +77,6 @@ public class Horse extends Animal implements Rideable {
 
     @Override
     public void eat(Edible food, FoodStorage storage) {
-        storage.takeFood(food.getClass().getSimpleName(),food);
+        storage.takeLastFood(food.getClass().getSimpleName());
     }
 }
