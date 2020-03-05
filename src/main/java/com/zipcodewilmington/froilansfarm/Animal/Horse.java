@@ -59,6 +59,7 @@ public class Horse extends Animal implements Rideable {
     public void gallop(){ setHappy(true);; }
 
 
+
     @Override
     public void setMounted(boolean mounted) {
         this.isMounted = mounted;

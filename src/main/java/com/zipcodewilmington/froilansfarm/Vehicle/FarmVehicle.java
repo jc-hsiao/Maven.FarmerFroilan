@@ -1,9 +1,14 @@
 package com.zipcodewilmington.froilansfarm.Vehicle;
 
+import java.util.logging.Logger;
+
 public abstract class FarmVehicle extends Vehicle {
 
     private String color;
     private Integer gasLevel = 10;
+
+    private static final Logger LOGGER = Logger.getLogger(FarmVehicle.class.getName());
+
 
 
     public FarmVehicle() {
@@ -24,11 +29,6 @@ public abstract class FarmVehicle extends Vehicle {
     }
 
     public Integer getGasLevel() {
-        if (gasLevel < 0)
-            System.out.println("Yikes, you are crashing!!");
-        else {
-            return gasLevel;
-        }
         return gasLevel;
     }
 
@@ -37,10 +37,11 @@ public abstract class FarmVehicle extends Vehicle {
     }
 
     public Boolean isEmpty(Integer gasLevel) {
-        if (gasLevel == 0) {
-            return true;
+        if (this.gasLevel > 1) {
+            LOGGER.info("\n your gas level is " + gasLevel + ".");
+            return false;
         }
-        return false;
+        return true;
     }
 
     public void refill() {
