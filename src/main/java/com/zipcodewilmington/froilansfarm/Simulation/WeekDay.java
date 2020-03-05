@@ -4,7 +4,7 @@ import com.zipcodewilmington.froilansfarm.Simulation.Events.*;
 
 public enum WeekDay {
 
-    MON("Monday","Mon", new MondayEvents()),
+    MON("Monday","Mon", new SundayEvents()),
     TUE("Tuesday","Tue", new TuesdayEvents()),
     WED("Wednesday","Wed", new WednesdayEvents()),
     THU("Thursday","Thr", new ThursdayEvents()),

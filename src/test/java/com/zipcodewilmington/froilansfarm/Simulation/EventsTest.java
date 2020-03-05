@@ -1,8 +1,11 @@
 package com.zipcodewilmington.froilansfarm.Simulation;
 
+import com.zipcodewilmington.froilansfarm.Animal.Horse;
 import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
+import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
+import com.zipcodewilmington.froilansfarm.Storage.Stable;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -27,6 +30,33 @@ public class EventsTest {
         Assert.assertEquals("Foilanda",mc.getName());
         Assert.assertEquals(22,mc.getAge());
         Assert.assertEquals("Female",mc.getGender());
+    }
+
+    @Test
+    public void mcEatTest(){
+        Farmer mc = getMC(farm);
+        Events.mcEats(mc,1,1,1,farm.getFoodStorage());
+        Assert.assertEquals(49,farm.getFoodStorage().getFoodCount("EarOfCorn"));
+        Assert.assertEquals(49,farm.getFoodStorage().getFoodCount("Tomato"));
+        Assert.assertEquals(49,farm.getFoodStorage().getFoodCount("Egg"));
+    }
+
+    @Test
+    public void rideEveryHorseTest(){
+
+        for(Stable s :farm.getStables()){
+            for( Horse h : s.getHorses()){
+                Assert.assertFalse(h.isDocile());
+            }
+        }
+        Events.rideEveryHorse(farm);
+
+        for(Stable s :farm.getStables()){
+            for( Horse h : s.getHorses()){
+                Assert.assertTrue(h.isDocile());
+            }
+        }
+
     }
 
 
