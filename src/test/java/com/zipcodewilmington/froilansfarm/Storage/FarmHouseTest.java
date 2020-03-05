@@ -43,6 +43,11 @@ public class FarmHouseTest {
     }
 
     @Test
+    public void getPersonNullTest() {
+        Assert.assertNull( currentFarmHouse.getPerson("aslkdjals") );
+    }
+
+    @Test
     public void removePersonTest() {
         currentFarmHouse.addPerson(cfarmer);
         currentFarmHouse.removePerson("Chris Farmer");

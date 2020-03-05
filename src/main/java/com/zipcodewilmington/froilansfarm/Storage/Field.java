@@ -22,7 +22,7 @@ public class Field {
         return field.size();
     }
 
-    public void setField(ArrayList<CropRow> field) {
+    public void setCropRow(ArrayList<CropRow> field) {
         this.field = field;
     }
 }

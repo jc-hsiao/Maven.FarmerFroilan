@@ -70,4 +70,14 @@ public class ChickenCoopTest {
         Assert.assertEquals(expectedChickenCoopSize, actualChickenCoopSize);
     }
 
+    @Test
+    public void getChickensTest() {
+        currentChickenCoop.addChicken(new Chicken());
+        currentChickenCoop.addChicken(new Chicken());
+        currentChickenCoop.addChicken(new Chicken());
+        currentChickenCoop.addChicken(new Chicken());
+
+        Assert.assertEquals(4,currentChickenCoop.getChickens().size());
+    }
+
 }

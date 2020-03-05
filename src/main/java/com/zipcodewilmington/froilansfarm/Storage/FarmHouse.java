@@ -33,7 +33,4 @@ public class FarmHouse {
         listOfPeople.removeIf(element -> element.getName().equals(name));
     }
 
-    public void setListOfPeople(ArrayList<Person> listOfPeople) {
-        this.listOfPeople = listOfPeople;
-    }
 }
