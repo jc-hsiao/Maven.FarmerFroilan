@@ -34,6 +34,7 @@ public class FarmTest {
         Assert.assertNull(myFarm.getFoodStorage());
     }
 
+    @Test
     public void constructor3Test(){
 
         ArrayList<Stable> stables = new ArrayList<>();
@@ -53,8 +54,8 @@ public class FarmTest {
         vehicles.add(new CropDuster());
         Farm myFarm = new Farm("My Farm",stables,chickenCoops,fields,new FarmHouse(),new FoodStorage(),new FoodStorage(),vehicles);
         Assert.assertEquals( "My Farm", myFarm.getFarmName() );
-        Assert.assertEquals( 2, myFarm.getChickenCoops().size());
-        Assert.assertEquals( 4, myFarm.getStables().size());
+        Assert.assertEquals( 4, myFarm.getChickenCoops().size());
+        Assert.assertEquals( 2, myFarm.getStables().size());
         Assert.assertEquals( 3, myFarm.getFields().size());
         Assert.assertNotNull(myFarm.getFarmHouse());
         Assert.assertNotNull(myFarm.getFoodStorage());

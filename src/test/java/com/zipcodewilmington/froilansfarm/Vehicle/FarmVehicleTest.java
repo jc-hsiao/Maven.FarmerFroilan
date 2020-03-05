@@ -14,8 +14,7 @@ public class FarmVehicleTest {
         FarmVehicle newFarmVehicle = new CropDuster();
         newFarmVehicle.setGasLevel(5);
         Integer gasLevel = newFarmVehicle.getGasLevel();
-        Assert.assertTrue(newFarmVehicle.isEmpty(0));
-        Assert.assertFalse(newFarmVehicle.isEmpty(5));
+        Assert.assertFalse(newFarmVehicle.isEmpty());
 
         LOGGER.info("" + gasLevel);
     }

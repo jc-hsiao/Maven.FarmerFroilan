@@ -37,8 +37,8 @@ public class Simulation {
         mainFarm.setChickenCoops(setUpChickenCoops());
         mainFarm.setStables(setUpStables());
         mainFarm.setVehicles(setUpVehicle());
-        mainFarm.setFoodStorage(setUpStorage());
-        mainFarm.setAnimalFoodStorage(setUpStorage());
+        mainFarm.setFoodStorage(setUpFridge());
+        mainFarm.setAnimalFoodStorage(setUpSilo());
         mainFarm.setFields(listOfFields);
         return mainFarm;
     }
@@ -69,12 +69,23 @@ public class Simulation {
     }
 
 
-    public static FoodStorage setUpStorage(){
+    public static FoodStorage setUpSilo(){
+        FoodStorage someStorage = new FoodStorage();
+        ArrayList<Edible> manyCorns = new ArrayList<>();
+        for (int i = 0; i < 150 ; i++) {
+            manyCorns.add(new EarOfCorn());
+        }
+        someStorage.addFoodSet("EarOfCorn", manyCorns);
+
+        return someStorage;
+    }
+
+    public static FoodStorage setUpFridge(){
         FoodStorage someStorage = new FoodStorage();
         ArrayList<Edible> manyCorns = new ArrayList<>();
         ArrayList<Edible> manyTomato = new ArrayList<>();
         ArrayList<Edible> manyEgg = new ArrayList<>();
-        for (int i = 0; i < 150 ; i++) {
+        for (int i = 0; i < 50 ; i++) {
             manyCorns.add(new EarOfCorn());
             manyTomato.add(new Tomato());
             manyEgg.add(new Egg());
@@ -85,6 +96,7 @@ public class Simulation {
 
         return someStorage;
     }
+
 
     public static ArrayList<ChickenCoop> setUpChickenCoops(){
         ArrayList<ChickenCoop> chickenCoopList = new ArrayList<>();

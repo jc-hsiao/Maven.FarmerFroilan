@@ -26,8 +26,4 @@ public class CropRow {
     public ArrayList<Crop> getCrops() {
         return crops;
     }
-
-    public void setCrops(ArrayList<Crop> crops) {
-        this.crops = crops;
-    }
 }

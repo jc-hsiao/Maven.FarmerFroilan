@@ -29,9 +29,6 @@ public class Stable {
         return h;
     }
 
-    public Horse removeLastHorse(){
-        return horses.remove(horses.size()-1);
-    }
 
     public Horse getHorse(String name){
         for( Horse h :horses ){

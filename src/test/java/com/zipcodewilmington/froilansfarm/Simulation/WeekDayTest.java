@@ -1,5 +1,7 @@
 package com.zipcodewilmington.froilansfarm.Simulation;
 
+import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
+import com.zipcodewilmington.froilansfarm.Simulation.Events.MondayEvents;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -20,6 +22,12 @@ public class WeekDayTest {
         String expected = "Fri";
 
         Assert.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void getWeekDayEventTest(){
+        WeekDay d1 = WeekDay.MON;
+        Assert.assertTrue(d1.getWeekDayEvents() instanceof MondayEvents);
     }
 
 }

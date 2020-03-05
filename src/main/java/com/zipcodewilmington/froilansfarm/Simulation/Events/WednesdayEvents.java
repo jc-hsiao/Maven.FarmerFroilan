@@ -15,9 +15,14 @@ import com.zipcodewilmington.froilansfarm.Storage.Stable;
 public class WednesdayEvents implements Events{
     public void run(Farm farm){
         Botanist froilanda = (Botanist)farm.getFarmHouse().getPerson("Froilanda");
-        c.printlnWait("Planting some tomatoes");
+        c.printlnWait(froilanda.getName()+" is feeling a little lazy today.");
+        c.printlnWait("She planted a few tomatoes");
         Field field = farm.getFields().get(0);
         CropRow newCropRow = field.getCropRow(1);
+        froilanda.plant(new TomatoPlant(), newCropRow);
+        froilanda.plant(new TomatoPlant(), newCropRow);
+        froilanda.plant(new TomatoPlant(), newCropRow);
+        froilanda.plant(new TomatoPlant(), newCropRow);
         froilanda.plant(new TomatoPlant(), newCropRow);
     }
 }

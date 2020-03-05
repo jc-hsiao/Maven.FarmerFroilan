@@ -46,9 +46,9 @@ public class CropDusterTest {
         CropDuster cd = new CropDuster();
         Field newField = new Field();
         cd.fertilizeCrops(newField,2);
-        Integer expGas = 7;
+        Integer expGas = 10;
         Integer actGas = cd.getGasLevel();
-        Integer expFertilizer = 6;
+        Integer expFertilizer = 5000;
         Integer actFertilizer = cd.getFertilizerAmount();
 
         Assert.assertEquals(expFertilizer,actFertilizer);

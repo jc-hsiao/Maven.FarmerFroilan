@@ -18,7 +18,7 @@ public final class Console {
     }
 
     public void printlnWait(String val, Object... vals){
-        printlnWaitWithTime(200L,val,vals);
+        printlnWaitWithTime(1000L,val,vals);
     }
 
     public void printlnWaitWithTime(long time, String val, Object... vals){

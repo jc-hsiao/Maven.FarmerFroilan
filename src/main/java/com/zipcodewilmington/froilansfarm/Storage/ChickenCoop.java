@@ -6,6 +6,7 @@ import java.util.ArrayList;
 public class ChickenCoop {
     ArrayList<Chicken> chickens;
 
+
     public ChickenCoop() {
         this.chickens = new ArrayList<>();
     }
@@ -28,8 +29,7 @@ public class ChickenCoop {
 
     public int getNumChicken(){return chickens.size();}
 
-    public void setChickens(ArrayList<Chicken> chickens) {
-        this.chickens = chickens;
-    }
+    public ArrayList<Chicken> getChickens() { return chickens; }
+
 
 }

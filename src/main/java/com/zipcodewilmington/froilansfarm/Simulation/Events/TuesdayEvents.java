@@ -18,6 +18,7 @@ public class TuesdayEvents implements Events {
         Field field = farm.getFields().get(0);
         CropRow newCropRow = field.getCropRow(0);
         Tractor tractor = (Tractor) farm.getVehicles().get(0);
+        c.printlnWait(f.getName()+" hops on a tractor.");
         tractor.setGasLevel(100);
         ArrayList<Crop> harvestedCrops;
         harvestedCrops = tractor.harvestCrops(newCropRow);
@@ -26,9 +27,9 @@ public class TuesdayEvents implements Events {
         for(Crop c : harvestedCrops){
             counter++;
         }
-        c.printlnWait("Harvested "+counter+" corns.");
+        c.printlnWait(f.getName()+" harvested the first crop row in the field, there are "+counter+" corns.");
         farm.getAnimalFoodStorage().updateFoodCount("EarOfCorn",new CornStalk(), counter+farm.getAnimalFoodStorage().getFoodCount("EarOfCorn"));
-        c.printlnWait("Stored "+counter +" corns into silo.");
+        c.printlnWait(f.getName()+" stored "+counter +" corns into silo.");
         c.printlnWait("Now silo has "+farm.getAnimalFoodStorage().getFoodCount("EarOfCorn")+" corn");
     }
 }

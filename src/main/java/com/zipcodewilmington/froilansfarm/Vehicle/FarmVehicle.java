@@ -36,7 +36,7 @@ public abstract class FarmVehicle extends Vehicle {
         this.gasLevel = gasLevel;
     }
 
-    public Boolean isEmpty(Integer gasLevel) {
+    public Boolean isEmpty() {
         if (this.gasLevel > 1) {
             LOGGER.info("\n your gas level is " + gasLevel + ".");
             return false;

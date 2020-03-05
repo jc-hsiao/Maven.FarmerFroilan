@@ -36,22 +36,25 @@ public interface Events {
     }
 
     static void rideEveryHorse(Farm farm){
+        StringBuilder horses = new StringBuilder();
         ArrayList<Stable> stables = farm.getStables();
         for(Stable s : stables){
             for(Horse h : s.getHorses()){
                 getMC(farm).tame(h);
-                //c.printlnWait(getMC(farm).getName()+ " is taming "+ h.getName()+", it's docile: "+ h.isDocile());
                 getMC(farm).mount(h);
                 h.gallop();
                 getMC(farm).dismount(h);
-                c.printlnWait(getMC(farm).getName()+ " mounts "+ h.getName() +" and takes it for a run.");
                 h.eat(new EarOfCorn(), farm.getAnimalFoodStorage());
                 h.eat(new EarOfCorn(), farm.getAnimalFoodStorage());
                 h.eat(new EarOfCorn(), farm.getAnimalFoodStorage());
-                int num = farm.getAnimalFoodStorage().getFoodCount("EarOfCorn");
-                c.printlnWait("And then "+getMC(farm).getName()+" feed "+ h.getName()+" 3 corn. There are "+ num+" corn left in the silo");
+                horses.append(h.getName()).append(", ");
             }
         }
+        String horseNames = horses.substring(0,horses.length()-2);
+        c.printlnWait(getMC(farm).getName()+" took out "+horseNames+" from the stable and ride them.");
+        c.printlnWait("Each horse eat 3 corn, now the silo has "+farm.getAnimalFoodStorage().getFoodCount("EarOfCorn")+" more corn");
+        c.printlnWait("The morning tasks are done!");
+
     }
 
     static void mcEats(Person p, int numOfCorn, int numOfTom, int numOfEgg, FoodStorage fridge){
@@ -61,22 +64,19 @@ public interface Events {
             p.eat(new Tomato(), fridge);
         for(int i=0; i<numOfEgg; i++)
             p.eat(new Egg(), fridge);
-        c.printlnWait(p.getName()+" eat her breakfast, now the storage have "+
+        c.printlnWait(p.getName()+" eat some breakfast, now the storage have "+
                 fridge.getFoodCount("EarOfCorn") + " more corns, "+
                 fridge.getFoodCount("Tomato") +" more tomatoes, and "+
                 fridge.getFoodCount("Egg") +" more eggs");
     }
 
 
-    static void everyNight( Farm farm ){
+    static void everyNight( Farm farm ) {
         //thing that will happen every night
         Person mc = getMC(farm);
-        c.printlnWait("The moon is out! "+mc.getName()+" shouts to the sky: DO YOUR UNIT TESTS!!!!");
-        c.printlnWait("The mountain echos: UNIT TEST.....");
-        c.printlnWait("Unit test.......");
-        c.printlnWait("it test......");
-        c.printlnWait("test.....");
+        c.printlnWait("Now we can call it a day!");
+        c.printlnWait("The moon is out! " + mc.getName() + " shouts to the sky: DO YOUR UNIT TESTS!!!!");
+        c.printlnWait("And the day ends");
+
     }
-
-
 }

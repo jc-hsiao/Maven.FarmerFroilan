@@ -7,7 +7,6 @@ import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 
 public class MondayEvents implements Events{
     Person froilanda;
-    CropDuster temp;
 
     public void run(Farm farm) {
         createFroilanda(farm);
@@ -17,8 +16,8 @@ public class MondayEvents implements Events{
         FarmVehicle cropDuster = farm.getVehicles().get(1);
         CropDuster temp = (CropDuster)cropDuster;
         temp.fertilizeCrops(farm.getFields().get(0), 5);
-        c.printlnWait(froilanda.getName() + " fertilizes the " + farm.getFields().size() +
-                " which consisted of " + farm.getFields().get(0).getCropRow(5) +
+        c.printlnWait(froilanda.getName() + " fertilizes " + farm.getFields().size() + " field"+
+                " which consisted of " + farm.getFields().get(0).getFieldSize() +
                 " rows.");
     }
 
