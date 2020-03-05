@@ -17,7 +17,6 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     public CropDuster() {super();}
 
-
     public Boolean hasFertilizer() {
 
         if (fertilizerAmount == 0) {
