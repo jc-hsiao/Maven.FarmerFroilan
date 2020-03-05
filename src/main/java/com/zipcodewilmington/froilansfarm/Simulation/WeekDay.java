@@ -1,17 +1,14 @@
 package com.zipcodewilmington.froilansfarm.Simulation;
 
-import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
-import com.zipcodewilmington.froilansfarm.Simulation.Events.MondayEvents;
-import com.zipcodewilmington.froilansfarm.Simulation.Events.SundayEvents;
-import com.zipcodewilmington.froilansfarm.Simulation.Events.TuesdayEvents;
+import com.zipcodewilmington.froilansfarm.Simulation.Events.*;
 
 public enum WeekDay {
 
     MON("Monday","Mon", new MondayEvents()),
     TUE("Tuesday","Tue", new TuesdayEvents()),
-    WED("Wednesday","Wed", new SundayEvents()),
-    THU("Thursday","Thr", new SundayEvents()),
-    FRI("Friday","Fri", new SundayEvents()),
+    WED("Wednesday","Wed", new WednesdayEvents()),
+    THU("Thursday","Thr", new ThursdayEvents()),
+    FRI("Friday","Fri", new FridayEvents()),
     SAT("Saturday","Sat", new SundayEvents()),
     SUN("Sunday","Sun", new SundayEvents());
 

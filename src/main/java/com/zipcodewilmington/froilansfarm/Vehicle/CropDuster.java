@@ -17,16 +17,21 @@ public class CropDuster extends FarmVehicle implements Flyable {
 
     public CropDuster() {super();}
 
-    public Boolean hasFertilizer(){
-        return fertilizerAmount != 0;
+
+    public Boolean hasFertilizer() {
+
+        if (fertilizerAmount == 0) {
+            return false;
+        }
+        return true;
     }
 
-    public void fertilizeCrops(Field newField, Integer amtOfRows){
+    public void fertilizeCrops(Field newField, Integer amtOfRows) {
 
         fly();
         newField.getCropRow(amtOfRows);
 
-        for (int i = 0; i <amtOfRows  ; i++) {
+        for (int i = 0; i < amtOfRows; i++) {
             setGasLevel(getGasLevel() - 1);
             setFertilizerAmount(getFertilizerAmount() - 1);
 
@@ -34,6 +39,12 @@ public class CropDuster extends FarmVehicle implements Flyable {
     }
 
     public Integer getFertilizerAmount() {
+
+        if (fertilizerAmount < 0) {
+            System.out.println("Out of fertilizer. You are fertilizing nothing now.");
+        } else {
+            return fertilizerAmount;
+        }
         return fertilizerAmount;
     }
 
@@ -41,15 +52,15 @@ public class CropDuster extends FarmVehicle implements Flyable {
         this.fertilizerAmount = fertilizer;
     }
 
-    public void refillFertilizer(){
-    setFertilizerAmount(8);
+    public void refillFertilizer() {
+        setFertilizerAmount(8);
 
     }
 
     @Override
     public void fly() {
 
-        setGasLevel(getGasLevel()-1);
+        setGasLevel(getGasLevel() - 1);
     }
 
     @Override

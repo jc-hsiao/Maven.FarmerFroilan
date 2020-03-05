@@ -28,14 +28,19 @@ public class Simulation {
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
         Person froilanda = new Botanist("Foilanda", 22, "Female");
+        ArrayList<Field> listOfFields = new ArrayList<>();
+        Field currentField = new Field();
+        listOfFields.add(currentField);
         froilansHouse.addPerson(froilan);
         froilansHouse.addPerson(froilanda);
+
         mainFarm.setFarmHouse(froilansHouse);
         mainFarm.setChickenCoops(setUpChickenCoops());
         mainFarm.setStables(setUpStables());
         mainFarm.setVehicles(setUpVehicle());
         mainFarm.setFoodStorage(setUpStorage());
         mainFarm.setAnimalFoodStorage(setUpStorage());
+        mainFarm.setFields(listOfFields);
         return mainFarm;
     }
 
