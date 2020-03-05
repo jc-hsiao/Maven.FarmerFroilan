@@ -30,6 +30,14 @@ public class FoodStorage {
         }
     }
 
+    public void takeLastFood(String foodName) {
+        if (foodStorage.containsKey(foodName)) {
+            foodStorage.get(foodName).remove(foodStorage.get(foodName).size()-1);
+        }
+    }
+    public int getFoodCount(String foodName){
+        return foodStorage.get(foodName).size();
+    }
     public void updateFoodCount(String foodName, Produce newProduce, int howMany) {
         if (foodStorage.containsKey(foodName)) {
             for (int i = 0; i < howMany; i++) {

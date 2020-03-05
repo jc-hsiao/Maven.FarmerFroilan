@@ -18,6 +18,6 @@ public class Botanist extends Person implements Eater {
 
     @Override
     public void eat(Edible food, FoodStorage storage) {
-        storage.takeFood(food.getClass().getSimpleName(),food);
+        storage.takeLastFood(food.getClass().getSimpleName());
     }
 }
