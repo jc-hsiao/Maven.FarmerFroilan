@@ -1,14 +1,15 @@
 package com.zipcodewilmington.froilansfarm.Simulation.Events;
-import com.zipcodewilmington.froilansfarm.Person.Botanist;
-import com.zipcodewilmington.froilansfarm.Person.Person;
+import com.zipcodewilmington.froilansfarm.Person.Farmer;
+import com.zipcodewilmington.froilansfarm.Produce.Tomato;
 import com.zipcodewilmington.froilansfarm.Storage.Farm;
-import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
-import com.zipcodewilmington.froilansfarm.Vehicle.FarmVehicle;
 
 public class ThursdayEvents implements Events{
     public void run(Farm farm){
-      MondayEvents thursday = new MondayEvents();
-      thursday.run(farm);
+
+        Farmer fro = (Farmer) farm.getFarmHouse().getPerson("Froiland");
+        c.printlnWait(fro.getName()+" feel a little hungry.");
+        fro.eat(new Tomato(), farm.getFoodStorage());
+        c.printlnWait(fro.getName()+" eats a tomato from the fridge.");
 
     }
 
