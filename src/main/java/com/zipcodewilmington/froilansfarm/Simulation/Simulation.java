@@ -49,7 +49,7 @@ public class Simulation {
         ArrayList<Edible> manyCorns = new ArrayList<>();
         ArrayList<Edible> manyTomato = new ArrayList<>();
         ArrayList<Edible> manyEgg = new ArrayList<>();
-        for (int i = 0; i < 30 ; i++) {
+        for (int i = 0; i < 50 ; i++) {
             manyCorns.add(new EarOfCorn());
             manyTomato.add(new Tomato());
             manyEgg.add(new Egg());
