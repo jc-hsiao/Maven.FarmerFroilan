@@ -24,7 +24,7 @@ public class Simulation {
         Farm mainFarm = new Farm("Froilan's Farm");
         FarmHouse froilansHouse = new FarmHouse();
         Person froilan = new Farmer("Froilan",25,"Male");
-        Person froilanda = new Botanist("Foilanda", 22, "Female");
+        Person froilanda = new Botanist("Froilanda", 22, "Female");
         ArrayList<Field> listOfFields = new ArrayList<>();
         Field currentField = new Field();
         listOfFields.add(currentField);
