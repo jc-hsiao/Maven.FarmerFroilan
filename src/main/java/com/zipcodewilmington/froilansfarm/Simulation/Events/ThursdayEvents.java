@@ -6,7 +6,7 @@ import com.zipcodewilmington.froilansfarm.Storage.Farm;
 public class ThursdayEvents implements Events{
     public void run(Farm farm){
 
-        Farmer fro = (Farmer) farm.getFarmHouse().getPerson("Froiland");
+        Farmer fro = (Farmer) farm.getFarmHouse().getPerson("Froilan");
         c.printlnWait(fro.getName()+" feel a little hungry.");
         fro.eat(new Tomato(), farm.getFoodStorage());
         c.printlnWait(fro.getName()+" eats a tomato from the fridge.");

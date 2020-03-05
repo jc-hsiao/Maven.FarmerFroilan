@@ -5,10 +5,7 @@ import com.zipcodewilmington.froilansfarm.Console;
 import com.zipcodewilmington.froilansfarm.Person.Botanist;
 import com.zipcodewilmington.froilansfarm.Person.Farmer;
 import com.zipcodewilmington.froilansfarm.Person.Person;
-import com.zipcodewilmington.froilansfarm.Produce.EarOfCorn;
-import com.zipcodewilmington.froilansfarm.Produce.Edible;
-import com.zipcodewilmington.froilansfarm.Produce.Egg;
-import com.zipcodewilmington.froilansfarm.Produce.Tomato;
+import com.zipcodewilmington.froilansfarm.Produce.*;
 import com.zipcodewilmington.froilansfarm.Simulation.Events.Events;
 import com.zipcodewilmington.froilansfarm.Storage.*;
 import com.zipcodewilmington.froilansfarm.Vehicle.CropDuster;
@@ -30,6 +27,8 @@ public class Simulation {
         Person froilanda = new Botanist("Froilanda", 22, "Female");
         ArrayList<Field> listOfFields = new ArrayList<>();
         Field currentField = new Field();
+        currentField.setCropRow(setUpCropRow());
+
         listOfFields.add(currentField);
         froilansHouse.addPerson(froilan);
         froilansHouse.addPerson(froilanda);
@@ -44,12 +43,38 @@ public class Simulation {
         return mainFarm;
     }
 
+
+    public static ArrayList<CropRow> setUpCropRow(){
+        ArrayList<CropRow> someCropRow = new ArrayList<>();
+
+        CropRow cr = new CropRow();
+        for (int j = 0; j < 100; j++) {
+            cr.addSeeds( new CornStalk());
+        }
+        CropRow cr2 = new CropRow();
+        for (int j = 0; j < 100; j++) {
+            cr2.addSeeds( new TomatoPlant());
+        }
+
+        CropRow cr3 = new CropRow();
+        CropRow cr4 = new CropRow();
+        CropRow cr5 = new CropRow();
+
+        someCropRow.add(cr);
+        someCropRow.add(cr2);
+        someCropRow.add(cr3);
+        someCropRow.add(cr4);
+        someCropRow.add(cr5);
+        return someCropRow;
+    }
+
+
     public static FoodStorage setUpStorage(){
         FoodStorage someStorage = new FoodStorage();
         ArrayList<Edible> manyCorns = new ArrayList<>();
         ArrayList<Edible> manyTomato = new ArrayList<>();
         ArrayList<Edible> manyEgg = new ArrayList<>();
-        for (int i = 0; i < 50 ; i++) {
+        for (int i = 0; i < 150 ; i++) {
             manyCorns.add(new EarOfCorn());
             manyTomato.add(new Tomato());
             manyEgg.add(new Egg());

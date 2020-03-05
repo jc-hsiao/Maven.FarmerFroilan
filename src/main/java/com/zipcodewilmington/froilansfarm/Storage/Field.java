@@ -15,19 +15,14 @@ public class Field {
     }
 
     public CropRow getCropRow(Integer numberCropRow) {
-        for (CropRow element : field) {
-            if (element.equals(numberCropRow)) {
-                return element;
-            }
-        }
-        return null;
+        return field.get(numberCropRow);
     }
 
     public Integer getFieldSize() {
         return field.size();
     }
 
-    public void setField(ArrayList<CropRow> field) {
+    public void setCropRow(ArrayList<CropRow> field) {
         this.field = field;
     }
 }
